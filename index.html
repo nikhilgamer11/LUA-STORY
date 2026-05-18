@@ -1,46 +1,31 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LearnUpon Anywhere — SE Training Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#1B2B4B; --teal:#00A9A5; --teal-dk:#007A77; --teal-lt:#D4F0EF;
-  --green:#22C55E; --green-dk:#166534; --green-lt:#DCFCE7;
-  --red:#EF4444; --red-dk:#991B1B; --red-lt:#FEE2E2;
-  --amber:#F59E0B; --amber-lt:#FEF3C7;
-  --indigo:#4F46E5; --indigo-lt:#EEF2FF;
-  --white:#FFFFFF; --off:#F8FAFC; --slate:#64748B; --border:#E2E8F0; --dark:#0F172A;
-}
+:root{--navy:#1B2B4B;--teal:#00A9A5;--teal-dk:#007A77;--teal-lt:#D4F0EF;--green:#22C55E;--green-dk:#166534;--green-lt:#DCFCE7;--red:#EF4444;--red-dk:#991B1B;--red-lt:#FEE2E2;--amber:#F59E0B;--amber-lt:#FEF3C7;--indigo:#4F46E5;--indigo-lt:#EEF2FF;--white:#FFFFFF;--off:#F8FAFC;--slate:#64748B;--border:#E2E8F0;--dark:#0F172A;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;overflow-x:hidden;}
-
-
-/* ── PORTAL SHELL ── */
+/* PORTAL */
 #portal{display:flex;flex-direction:column;min-height:100vh;}
 .p-header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 .logo{display:flex;align-items:center;gap:10px;}
 .logo-mark{width:30px;height:30px;background:var(--teal);border-radius:7px;display:flex;align-items:center;justify-content:center;}
-.logo-mark svg{width:16px;height:16px;}
 .logo-text{font-size:14px;font-weight:600;}
-.logo-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:1px;}
+.logo-sub{font-size:10px;color:rgba(255,255,255,.4);}
 .hdr-r{display:flex;align-items:center;gap:1.5rem;}
 .prog-wrap{display:flex;align-items:center;gap:8px;}
 .prog-label{font-size:11px;color:rgba(255,255,255,.45);}
 .prog-track{width:130px;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;}
 .prog-fill{height:100%;background:var(--teal);border-radius:2px;transition:width .6s ease;}
 .prog-pct{font-size:11px;font-weight:500;color:var(--teal);min-width:28px;}
-.user-chip{display:flex;align-items:center;gap:7px;}
 .user-av{width:28px;height:28px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--navy);}
 .user-nm{font-size:12px;color:rgba(255,255,255,.6);}
-
-
 .p-body{display:flex;flex:1;}
-
-
-/* ── SIDEBAR ── */
+/* SIDEBAR */
 .sidebar{width:272px;background:rgba(0,0,0,.2);border-right:1px solid rgba(255,255,255,.06);padding:1.25rem 0;flex-shrink:0;}
 .sb-label{font-size:9.5px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.28);text-transform:uppercase;margin-bottom:.6rem;padding:0 1.25rem;}
 .ci{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;cursor:pointer;transition:background .15s;margin-bottom:2px;position:relative;}
@@ -48,120 +33,127 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .ci.active{background:rgba(0,169,165,.14);}
 .ci.active::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:3px;background:var(--teal);border-radius:0 2px 2px 0;}
 .ci-icon{width:34px;height:34px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
-.ci-info{flex:1;min-width:0;}
-.ci-name{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.8);line-height:1.3;}
+.ci-name{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.8);}
 .ci-meta{font-size:10.5px;color:rgba(255,255,255,.32);margin-top:1px;}
-.ci-tick{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
+.ci-tick{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;margin-left:auto;}
 .ci-tick.done{background:var(--teal);border-color:var(--teal);}
-.ci-tick svg{width:9px;height:9px;}
 .sb-sep{height:1px;background:rgba(255,255,255,.06);margin:10px 12px;}
-
-
-/* ── MAIN ── */
+/* MAIN */
 .main-c{flex:1;overflow:hidden;position:relative;}
 .scene{position:absolute;inset:0;display:none;flex-direction:column;}
 .scene.active{display:flex;}
-
-
-/* ── HOME ── */
-#scene-home{background:var(--navy);align-items:center;justify-content:center;padding:3rem;}
-.home-c{max-width:540px;text-align:center;}
+/* HOME */
+#scene-home{background:var(--navy);align-items:center;justify-content:center;padding:3rem;text-align:center;}
 .home-eye{font-size:10.5px;font-weight:600;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:.9rem;}
 .home-h{font-size:40px;font-weight:600;line-height:1.1;margin-bottom:.9rem;}
 .home-h span{color:var(--teal);}
-.home-sub{font-size:15px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:2rem;}
+.home-sub{font-size:15px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;}
 .home-stats{display:flex;gap:2rem;justify-content:center;margin-bottom:2rem;}
 .stat .sn{font-size:28px;font-weight:600;color:var(--teal);}
-.stat .sl{font-size:11px;color:rgba(255,255,255,.38);margin-top:1px;}
-.btn-start{background:var(--teal);color:var(--navy);border:none;padding:13px 32px;border-radius:9px;font-size:14px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;}
-.btn-start:hover{background:var(--teal-dk);transform:translateY(-1px);}
-
-
-/* ── SLIDE SCENE ── */
+.stat .sl{font-size:11px;color:rgba(255,255,255,.38);}
+.btn-start{background:var(--teal);color:var(--navy);border:none;padding:13px 32px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-start:hover{background:var(--teal-dk);}
+/* SLIDE SHELL */
 .ss{background:var(--off);color:var(--navy);}
 .ss-hdr{background:var(--navy);padding:.8rem 1.75rem;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--teal);}
 .ss-cn{font-size:11.5px;font-weight:500;color:rgba(255,255,255,.5);}
-.ss-t{font-size:14.5px;font-weight:600;color:var(--white);}
+.ss-t{font-size:14.5px;font-weight:600;}
 .ss-dots{display:flex;gap:5px;}
-.sd{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);transition:all .3s;cursor:pointer;}
+.sd{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);cursor:pointer;}
 .sd.active{background:var(--teal);transform:scale(1.35);}
 .sd.done{background:rgba(0,169,165,.45);}
 .ss-body{flex:1;overflow:hidden;position:relative;}
-.slide{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:2.25rem;opacity:0;transform:translateX(30px);transition:opacity .35s ease,transform .35s ease;}
+.slide{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:2rem;opacity:0;transform:translateX(30px);transition:opacity .35s,transform .35s;}
 .slide.active{display:flex;opacity:1;transform:translateX(0);}
 .ss-ftr{background:var(--navy);padding:.85rem 1.75rem;display:flex;align-items:center;justify-content:space-between;}
 .sc-txt{font-size:12px;color:rgba(255,255,255,.38);}
-.btn-n{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--white);padding:7px 18px;border-radius:7px;font-size:12.5px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;}
-.btn-n:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.35);}
+.btn-n{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--white);padding:7px 18px;border-radius:7px;font-size:12.5px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-n:hover{background:rgba(255,255,255,.07);}
 .btn-n.primary{background:var(--teal);border-color:var(--teal);color:var(--navy);font-weight:600;}
 .btn-n.primary:hover{background:var(--teal-dk);}
-.btn-n:disabled{opacity:.3;pointer-events:none;}
-
-
-/* ── NOTIFICATION POPUP ── */
-.notif{position:absolute;top:20px;right:20px;width:320px;background:var(--white);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.28);overflow:hidden;transform:translateX(360px);transition:transform .5s cubic-bezier(.34,1.56,.64,1);z-index:50;}
+/* CARDS */
+.card{background:var(--white);border-radius:12px;padding:1.5rem;box-shadow:0 16px 40px rgba(0,0,0,.1);}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:2px 9px;border-radius:18px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.tag-teal{background:var(--teal-lt);color:var(--teal-dk);}
+.tag-amber{background:var(--amber-lt);color:#92400E;}
+.tag-green{background:var(--green-lt);color:var(--green-dk);}
+.tag-red{background:var(--red-lt);color:var(--red-dk);}
+.tag-indigo{background:var(--indigo-lt);color:#3730A3;}
+/* NOTIFICATION */
+.notif{position:absolute;top:20px;right:20px;width:300px;background:var(--white);border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.28);overflow:hidden;transform:translateX(360px);transition:transform .5s cubic-bezier(.34,1.56,.64,1);z-index:50;}
 .notif.show{transform:translateX(0);}
 .notif-top{background:var(--navy);padding:9px 12px;display:flex;align-items:center;gap:8px;}
 .n-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.4s infinite;}
 .n-app{font-size:10.5px;color:rgba(255,255,255,.55);}
 .notif-body{padding:13px;}
-.n-title{font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:3px;}
-.n-text{font-size:12px;color:var(--slate);line-height:1.5;}
-.n-meta{display:flex;align-items:center;justify-content:space-between;margin-top:10px;}
-.n-time{font-size:10.5px;color:rgba(0,0,0,.32);}
-.n-btn{background:var(--teal);color:var(--white);border:none;padding:5px 12px;border-radius:5px;font-size:11.5px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;}
+.n-title{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px;}
+.n-text{font-size:11.5px;color:var(--slate);line-height:1.5;}
+.n-btn{background:var(--teal);color:var(--white);border:none;padding:5px 12px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-
-/* ── LEAD CARD ── */
+/* LEAD CARD */
 .lead-card{background:var(--white);border-radius:14px;padding:1.75rem;max-width:440px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.12);}
-.lead-tag{display:inline-flex;align-items:center;gap:5px;background:#DCFCE7;color:#166534;font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:18px;margin-bottom:.9rem;}
-.lead-tag-dot{width:5px;height:5px;border-radius:50%;background:#22C55E;animation:pulse 1s infinite;}
+.live-tag{display:inline-flex;align-items:center;gap:5px;background:var(--green-lt);color:var(--green-dk);font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:18px;margin-bottom:.9rem;}
 .lead-co{font-size:22px;font-weight:600;color:var(--navy);margin-bottom:.4rem;}
 .lead-det{font-size:13px;color:var(--slate);margin-bottom:1rem;line-height:1.6;}
 .chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem;}
 .chip{font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:18px;background:var(--teal-lt);color:var(--teal-dk);}
-.chip.hot{background:#FEF3C7;color:#92400E;}
-.lead-note{background:#FEF3C7;border-radius:7px;padding:9px 11px;margin-bottom:1rem;font-size:12px;color:#92400E;line-height:1.5;}
+.chip.hot{background:var(--amber-lt);color:#92400E;}
+.lead-note{background:var(--amber-lt);border-radius:7px;padding:9px 11px;margin-bottom:1rem;font-size:12px;color:#92400E;line-height:1.5;}
 .lead-acts{display:flex;gap:7px;}
-.la-btn{flex:1;padding:9px;border-radius:7px;font-size:12.5px;font-weight:600;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;transition:all .2s;}
-.la-btn.pri{background:var(--teal);color:var(--white);}
-.la-btn.sec{background:var(--off);color:var(--navy);border:1px solid var(--border);}
-
-
-/* ── SECTION CARDS ── */
-.sec-card{background:var(--white);border-radius:14px;padding:1.5rem;box-shadow:0 16px 40px rgba(0,0,0,.1);}
-.kv-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.kv{background:var(--off);border-radius:10px;padding:1rem;border:1px solid var(--border);}
-.kv-label{font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:5px;}
-.kv-val{font-size:13px;color:var(--dark);line-height:1.55;}
-
-
-/* ── COMPATIBILITY TABLE ── */
-.compat-table{width:100%;border-collapse:collapse;font-size:12px;}
-.compat-table th{background:var(--navy);color:var(--white);padding:8px 12px;text-align:left;font-size:11px;font-weight:500;}
-.compat-table td{padding:9px 12px;border-bottom:1px solid var(--border);}
-.compat-table tr:nth-child(even) td{background:#F8FAFC;}
-.badge-full{display:inline-flex;align-items:center;gap:4px;background:#DCFCE7;color:#166534;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:10px;}
-.badge-minor{display:inline-flex;align-items:center;gap:4px;background:#FEF3C7;color:#92400E;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:10px;}
-.badge-no{display:inline-flex;align-items:center;gap:4px;background:#FEE2E2;color:#991B1B;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:10px;}
-
-
-/* ── IMPACT STATS ── */
+.la-btn{flex:1;padding:9px;border-radius:7px;font-size:12.5px;font-weight:600;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;}
+.la-pri{background:var(--teal);color:var(--white);}
+.la-sec{background:var(--off);color:var(--navy);border:1px solid var(--border);}
+/* GRID */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+/* VISION CARD */
+.vis-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1rem;text-align:left;}
+.vis-icon{font-size:20px;margin-bottom:8px;}
+.vis-title{font-size:12.5px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.vis-body{font-size:11px;color:rgba(255,255,255,.45);line-height:1.55;}
+/* OPTION CARD */
+.opt-card{background:var(--white);border-radius:12px;padding:1.4rem;}
+.opt-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem;}
+.opt-title{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:.6rem;}
+.opt-desc{font-size:12px;color:var(--slate);line-height:1.6;margin-bottom:.9rem;}
+.opt-best{font-size:11px;font-weight:600;margin-bottom:4px;}
+.opt-item{font-size:11px;color:var(--slate);padding:3px 0;border-bottom:1px solid rgba(0,0,0,.05);}
+/* APP TYPE ROWS */
+.app-row{display:flex;gap:12px;background:var(--white);border-radius:9px;padding:11px 14px;border:1px solid var(--border);margin-bottom:7px;}
+.app-num{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--white);flex-shrink:0;}
+.app-name{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:2px;}
+.app-badge{font-size:9.5px;font-weight:600;padding:1px 7px;border-radius:10px;margin-left:8px;}
+.app-desc{font-size:11px;color:var(--slate);line-height:1.5;}
+.app-note{font-size:11px;color:rgba(0,0,0,.45);margin-top:3px;font-style:italic;}
+/* COMPAT TABLE */
+.compat{width:100%;border-collapse:collapse;font-size:11.5px;}
+.compat th{background:var(--navy);color:var(--white);padding:8px 12px;text-align:left;font-size:11px;font-weight:500;}
+.compat td{padding:8px 12px;border-bottom:1px solid var(--border);}
+.compat tr:nth-child(even) td{background:var(--off);}
+.badge-ok{display:inline-flex;align-items:center;gap:3px;background:var(--green-lt);color:var(--green-dk);font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;}
+.badge-warn{background:var(--amber-lt);color:#92400E;display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;}
+.badge-no{background:var(--red-lt);color:var(--red-dk);display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;}
+/* IMPACT GRID */
 .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:680px;width:100%;}
 .impact-card{background:var(--white);border-radius:12px;padding:1.25rem;border:1px solid var(--border);text-align:center;opacity:0;transform:translateY(20px);transition:all .4s ease;}
 .impact-card.show{opacity:1;transform:translateY(0);}
 .ic-num{font-size:28px;font-weight:600;margin-bottom:4px;}
 .ic-label{font-size:12px;color:var(--slate);line-height:1.5;}
 .ic-src{font-size:10px;color:rgba(0,0,0,.35);margin-top:6px;font-style:italic;}
-
-
-/* ── SALESFORCE ENV ── */
+/* CASE STUDY */
+.case-header{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;}
+.case-title{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:.75rem;}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.9rem;}
+.case-item{background:var(--off);border-radius:8px;padding:.9rem;border:1px solid var(--border);}
+.case-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.case-val{font-size:12px;color:var(--slate);line-height:1.55;}
+.case-tip{border-radius:7px;padding:9px 12px;font-size:12px;line-height:1.5;}
+/* SF ENV */
 .sf-env{background:#F3F3F3;border-radius:10px;overflow:hidden;width:100%;max-width:680px;border:1px solid #D0D0D0;}
 .sf-hdr{background:#1B96FF;padding:9px 14px;display:flex;align-items:center;gap:10px;}
 .sf-logo{font-size:12.5px;font-weight:700;color:white;}
-.sf-nav-item{font-size:11px;color:rgba(255,255,255,.7);padding:2px 7px;border-radius:3px;}
-.sf-nav-item.active{background:rgba(255,255,255,.2);color:white;}
+.sf-nav{font-size:11px;color:rgba(255,255,255,.7);padding:2px 7px;border-radius:3px;}
+.sf-nav.on{background:rgba(255,255,255,.2);color:white;}
 .sf-body{padding:14px;}
 .sf-rec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
 .sf-rec-t{font-size:16px;font-weight:600;color:#181818;}
@@ -171,132 +163,118 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
 .sf-fv{font-size:12px;color:#181818;font-weight:500;}
 .lu-embed{background:white;border:2px solid var(--teal);border-radius:7px;padding:12px;position:relative;opacity:0;transition:opacity .8s;}
 .lu-embed.show{opacity:1;}
-.lu-embed-badge{position:absolute;top:-9px;right:10px;background:var(--teal);color:white;font-size:9.5px;font-weight:600;padding:2px 7px;border-radius:8px;}
-.lu-embed-title{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:7px;}
-.lu-course-row{display:flex;align-items:center;gap:8px;padding:7px;background:var(--teal-lt);border-radius:5px;margin-bottom:5px;cursor:pointer;}
-.lu-course-icon{width:26px;height:26px;background:var(--teal);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
-.lu-course-name{font-size:11px;font-weight:500;color:var(--navy);}
-.lu-course-meta{font-size:10px;color:var(--slate);}
+.lu-badge{position:absolute;top:-9px;right:10px;background:var(--teal);color:white;font-size:9.5px;font-weight:600;padding:2px 7px;border-radius:8px;}
+.lu-title{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:7px;}
+.lu-row{display:flex;align-items:center;gap:8px;padding:7px;background:var(--teal-lt);border-radius:5px;margin-bottom:5px;}
+.lu-icon{width:26px;height:26px;background:var(--teal);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+.lu-cname{font-size:11px;font-weight:500;color:var(--navy);}
+.lu-cmeta{font-size:10px;color:var(--slate);}
 .lu-cta{font-size:10.5px;color:var(--teal);font-weight:600;margin-top:6px;cursor:pointer;}
-
-
-/* ── DEMO STEPS ── */
-.demo-step{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);align-items:flex-start;opacity:0;transform:translateY(14px);transition:all .35s ease;}
-.demo-step.vis{opacity:1;transform:translateY(0);}
-.demo-step:last-child{border-bottom:none;}
-.ds-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;flex-shrink:0;}
-.ds-title{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:2px;}
-.ds-desc{font-size:12px;color:var(--slate);line-height:1.5;}
-.ds-time{font-size:10.5px;font-weight:500;margin-top:3px;}
-
-
-/* ── GMAIL ── */
+/* STEPS */
+.step-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);align-items:flex-start;opacity:0;transform:translateY(12px);transition:all .35s;}
+.step-row.vis{opacity:1;transform:translateY(0);}
+.step-row:last-child{border-bottom:none;}
+.step-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;flex-shrink:0;}
+.step-title{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:2px;}
+.step-desc{font-size:12px;color:var(--slate);line-height:1.5;}
+.step-time{font-size:10.5px;font-weight:500;margin-top:3px;}
+/* GMAIL */
 .gmail-wrap{background:white;border-radius:10px;overflow:hidden;width:100%;max-width:640px;border:1px solid #E0E0E0;box-shadow:0 14px 36px rgba(0,0,0,.1);}
 .gmail-hdr{background:#404040;padding:7px 12px;display:flex;align-items:center;gap:8px;}
-.gmail-logo{font-size:16px;font-weight:700;letter-spacing:-.5px;}
-.gmail-logo span:nth-child(1){color:#4285F4;}
-.gmail-logo span:nth-child(2){color:#EA4335;}
-.gmail-logo span:nth-child(3){color:#FBBC04;}
-.gmail-logo span:nth-child(4){color:#4285F4;}
-.gmail-logo span:nth-child(5){color:#34A853;}
-.gmail-logo span:nth-child(6){color:#EA4335;}
+.g-r{color:#EA4335;font-size:16px;font-weight:700;}
+.g-g{color:#34A853;font-size:16px;font-weight:700;}
+.g-b{color:#4285F4;font-size:16px;font-weight:700;}
+.g-y{color:#FBBC04;font-size:16px;font-weight:700;}
 .gmail-compose{padding:14px;}
-.gc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-.gc-title{font-size:14px;font-weight:600;color:#202124;}
 .gmail-field{border-bottom:1px solid #E0E0E0;padding:7px 0;display:flex;align-items:baseline;gap:8px;}
 .gf-label{font-size:12px;color:#5F6368;min-width:40px;}
 .gf-val{font-size:12.5px;color:#202124;}
 .gf-val.typing::after{content:'|';animation:blink .65s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.gmail-body-txt{padding:10px 0;font-size:12.5px;color:#202124;line-height:1.7;min-height:120px;white-space:pre-wrap;}
-.gmail-send{background:#1A73E8;color:white;border:none;padding:8px 20px;border-radius:3px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;margin-top:10px;display:flex;align-items:center;gap:6px;}
+.gmail-body{padding:10px 0;font-size:12.5px;color:#202124;line-height:1.7;min-height:120px;white-space:pre-wrap;}
+.gmail-send-btn{background:#1A73E8;color:white;border:none;padding:8px 20px;border-radius:3px;font-size:13px;cursor:pointer;margin-top:10px;display:flex;align-items:center;gap:6px;font-family:'DM Sans',sans-serif;}
 .sent-conf{display:flex;align-items:center;gap:7px;padding:8px 12px;background:#E6F4EA;border-radius:5px;margin-top:8px;opacity:0;transition:opacity .4s;}
 .sent-conf.show{opacity:1;}
-.sent-conf-t{font-size:12px;color:#137333;font-weight:500;}
-
-
-/* ── PHONE / OBJECTION ── */
+.sent-txt{font-size:12px;color:#137333;font-weight:500;}
+/* PHONE */
 .phone-sc{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#0F172A;transition:background .5s;position:relative;flex-direction:column;gap:1.5rem;}
-.phone-sc.ring{background:#450A0A;animation:flashR .5s ease;}
-.phone-sc.resolved{background:#052E16;}
-@keyframes flashR{0%,100%{background:#0F172A}50%{background:#7F1D1D}}
+.phone-sc.ring{background:#450A0A;}
+.phone-sc.ok{background:#052E16;}
 .phone-dev{width:180px;background:#1E293B;border-radius:24px;padding:14px;border:2px solid rgba(255,255,255,.1);text-align:center;transition:all .3s;}
 .phone-dev.ring{border-color:var(--red);animation:shake .35s infinite;}
-.phone-dev.resolved{border-color:var(--green);}
+.phone-dev.ok{border-color:var(--green);}
 @keyframes shake{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
-.phone-screen{background:#0F172A;border-radius:15px;padding:18px 12px;margin-bottom:10px;min-height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ph-screen{background:#0F172A;border-radius:15px;padding:18px 12px;margin-bottom:10px;min-height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .ph-caller{font-size:10px;color:rgba(255,255,255,.38);margin-bottom:5px;}
 .ph-name{font-size:16px;font-weight:600;color:var(--white);margin-bottom:3px;}
 .ph-sub{font-size:11px;color:rgba(255,255,255,.38);}
-.ph-status{font-size:11.5px;font-weight:500;margin-top:7px;}
 .ph-btns{display:flex;justify-content:space-around;}
-.ph-btn{width:44px;height:44px;border-radius:50%;border:none;font-size:18px;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.ph-btn{width:44px;height:44px;border-radius:50%;border:none;font-size:18px;cursor:pointer;}
 .ph-dec{background:var(--red);}
 .ph-acc{background:var(--green);}
-.obj-card{background:white;border-radius:12px;padding:1.25rem;max-width:360px;width:100%;box-shadow:0 16px 40px rgba(0,0,0,.28);opacity:0;transform:translateY(18px);transition:all .4s ease;}
+.obj-card{background:white;border-radius:12px;padding:1.25rem;max-width:360px;width:100%;box-shadow:0 16px 40px rgba(0,0,0,.28);opacity:0;transform:translateY(18px);transition:all .4s;}
 .obj-card.show{opacity:1;transform:translateY(0);}
 .obj-lbl{font-size:9.5px;font-weight:600;letter-spacing:.1em;color:var(--red);text-transform:uppercase;margin-bottom:7px;}
 .obj-txt{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:11px;line-height:1.4;}
-.ace-step{display:flex;gap:9px;align-items:flex-start;margin-bottom:8px;opacity:0;transform:translateX(-8px);transition:all .35s ease;}
+.ace-step{display:flex;gap:9px;margin-bottom:8px;opacity:0;transform:translateX(-8px);transition:all .35s;}
 .ace-step.show{opacity:1;transform:translateX(0);}
 .ace-letter{width:22px;height:22px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;flex-shrink:0;}
 .ace-text{font-size:12px;color:var(--slate);line-height:1.5;padding-top:3px;}
-
-
-/* ── CLOSE SCENE ── */
+/* CLOSE */
 .close-sc{width:100%;height:100%;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:2rem;}
 .confetti-p{position:absolute;border-radius:2px;animation:cFall linear forwards;opacity:0;}
-@keyframes cFall{0%{transform:translateY(-40px) rotate(0deg);opacity:1}100%{transform:translateY(580px) rotate(720deg);opacity:0}}
+@keyframes cFall{0%{transform:translateY(-40px) rotate(0);opacity:1}100%{transform:translateY(580px) rotate(720deg);opacity:0}}
 .deal-won{text-align:center;margin-bottom:1.75rem;opacity:0;transform:scale(.82);transition:all .55s cubic-bezier(.34,1.56,.64,1);}
 .deal-won.show{opacity:1;transform:scale(1);}
 .dw-icon{font-size:52px;margin-bottom:.6rem;}
-.dw-title{font-size:34px;font-weight:600;color:var(--white);margin-bottom:.4rem;}
+.dw-title{font-size:34px;font-weight:600;}
 .dw-sub{font-size:14px;color:rgba(255,255,255,.45);}
-.team-photos{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(20px);transition:all .55s ease .35s;}
-.team-photos.show{opacity:1;transform:translateY(0);}
-.tm{text-align:center;opacity:0;transform:translateY(14px);transition:all .45s ease;}
+.team-row{display:flex;gap:1.25rem;justify-content:center;opacity:0;transform:translateY(20px);transition:all .55s ease .35s;}
+.team-row.show{opacity:1;transform:translateY(0);}
+.tm{text-align:center;opacity:0;transform:translateY(14px);transition:all .45s;}
 .tm.show{opacity:1;transform:translateY(0);}
-.tm-av{width:74px;height:74px;border-radius:50%;border:2.5px solid var(--teal);margin:0 auto 6px;overflow:hidden;background:var(--teal-lt);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;color:var(--navy);}
+.tm-av{width:74px;height:74px;border-radius:50%;border:2.5px solid var(--teal);margin:0 auto 6px;background:var(--teal-lt);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;color:var(--navy);}
 .tm-av.ceo{width:90px;height:90px;border-color:var(--amber);font-size:26px;}
-.tm-name{font-size:12.5px;font-weight:500;color:var(--white);}
-.tm-role{font-size:10.5px;color:rgba(255,255,255,.38);margin-top:1px;}
+.tm-name{font-size:12.5px;font-weight:500;}
+.tm-role{font-size:10.5px;color:rgba(255,255,255,.38);}
 .deal-stats{display:flex;gap:1.75rem;background:rgba(255,255,255,.06);border-radius:12px;padding:1.1rem 1.75rem;margin-top:1.5rem;opacity:0;transition:opacity .55s ease .75s;}
 .deal-stats.show{opacity:1;}
 .ds-n{font-size:22px;font-weight:600;color:var(--teal);}
-.ds-l{font-size:10.5px;color:rgba(255,255,255,.38);margin-top:1px;}
-
-
-/* ── SCREEN FLASH ── */
+.ds-l{font-size:10.5px;color:rgba(255,255,255,.38);}
+/* FLASH */
 .s-flash{position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:0;transition:opacity .12s;}
-.s-flash.red{background:rgba(239,68,68,.18);}
-.s-flash.green{background:rgba(34,197,94,.18);}
-.s-flash.amber{background:rgba(245,158,11,.14);}
-
-
-/* ── CHALLENGE FLIP CARDS ── */
-.flip-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:660px;width:100%;}
-.flip-card{height:160px;perspective:1000px;cursor:pointer;}
-.flip-inner{position:relative;width:100%;height:100%;transition:transform .55s ease;transform-style:preserve-3d;}
-.flip-card.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-front,.flip-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:1.1rem;display:flex;flex-direction:column;justify-content:space-between;}
-.flip-front{background:var(--red-lt);border:1px solid var(--red);}
-.flip-back{background:var(--green-lt);border:1px solid var(--green);transform:rotateY(180deg);}
-.flip-tag{font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
-.flip-title{font-size:13px;font-weight:600;line-height:1.4;}
-.flip-body{font-size:11.5px;line-height:1.5;flex:1;margin-top:6px;}
-.flip-hint{font-size:10px;opacity:.55;margin-top:6px;}
+/* DO/DONT */
+.do-col{background:var(--white);border-radius:12px;padding:1.25rem;border:1px solid var(--green-lt);}
+.dont-col{background:var(--white);border-radius:12px;padding:1.25rem;border:1px solid var(--red-lt);}
+.do-title{font-size:13px;font-weight:600;color:var(--green-dk);margin-bottom:10px;}
+.dont-title{font-size:13px;font-weight:600;color:var(--red-dk);margin-bottom:10px;}
+.do-item{font-size:11.5px;color:var(--slate);padding:5px 0;border-bottom:1px solid #F0FFF4;line-height:1.4;}
+.dont-item{font-size:11.5px;color:var(--slate);padding:5px 0;border-bottom:1px solid #FFF5F5;line-height:1.4;}
+/* PROCESS STEPS */
+.proc-step{display:flex;gap:12px;background:var(--white);border-radius:9px;padding:11px 14px;border:1px solid var(--border);margin-bottom:7px;}
+.ps-num{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--white);flex-shrink:0;}
+.ps-title{font-size:12.5px;font-weight:600;color:var(--dark);margin-bottom:2px;}
+.ps-desc{font-size:11px;color:var(--slate);line-height:1.5;}
+/* NEXT STEPS */
+.ns-row{display:flex;gap:0;}
+.ns-step{flex:1;background:var(--white);border:1px solid var(--border);padding:1rem;text-align:center;position:relative;}
+.ns-step:first-child{border-radius:10px 0 0 10px;}
+.ns-step:last-child{border-radius:0 10px 10px 0;}
+.ns-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:var(--white);margin:0 auto 8px;}
+.ns-title{font-size:11px;font-weight:600;color:var(--dark);margin-bottom:4px;}
+.ns-desc{font-size:10px;color:var(--slate);line-height:1.45;}
+.ns-arrow{position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--teal);z-index:1;}
 </style>
 </head>
 <body>
 <div class="s-flash" id="sFlash"></div>
 <div id="portal">
 
-
 <!-- HEADER -->
 <div class="p-header">
   <div class="logo">
     <div class="logo-mark">
-      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
     </div>
     <div><div class="logo-text">LearnUpon Anywhere</div><div class="logo-sub">SE Training Hub</div></div>
   </div>
@@ -306,89 +284,83 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
       <div class="prog-track"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
       <span class="prog-pct" id="progPct">0%</span>
     </div>
-    <div class="user-chip">
+    <div style="display:flex;align-items:center;gap:7px;">
       <div class="user-av">SE</div>
       <span class="user-nm">Nikhil</span>
     </div>
   </div>
 </div>
 
-
 <div class="p-body">
 <!-- SIDEBAR -->
 <div class="sidebar">
-  <div style="padding:0 12px;margin-bottom:8px;">
+  <div style="padding:0 12px;">
     <div class="sb-label">Navigation</div>
     <div class="ci active" id="nav-home" onclick="goHome()">
       <div class="ci-icon" style="background:rgba(0,169,165,.14);">🏠</div>
-      <div class="ci-info"><div class="ci-name">Training Hub</div><div class="ci-meta">Start here</div></div>
-      <div class="ci-tick done" id="tick-home"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">Training Hub</div><div class="ci-meta">Start here</div></div>
+      <div class="ci-tick done" id="tick-home">✓</div>
     </div>
     <div class="sb-sep"></div>
     <div class="sb-label">Courses</div>
     <div class="ci" id="nav-c1" onclick="openCourse(1)">
       <div class="ci-icon" style="background:rgba(239,68,68,.12);">📩</div>
-      <div class="ci-info"><div class="ci-name">The Inbound Lead</div><div class="ci-meta">3 slides · 5 min</div></div>
-      <div class="ci-tick" id="tick-c1"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">The Inbound Lead</div><div class="ci-meta">3 slides · 5 min</div></div>
+      <div class="ci-tick" id="tick-c1"></div>
     </div>
     <div class="ci" id="nav-c2" onclick="openCourse(2)">
       <div class="ci-icon" style="background:rgba(0,169,165,.12);">🌐</div>
-      <div class="ci-info"><div class="ci-name">What is Anywhere Really?</div><div class="ci-meta">4 slides · 8 min</div></div>
-      <div class="ci-tick" id="tick-c2"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">What is Anywhere Really?</div><div class="ci-meta">4 slides · 8 min</div></div>
+      <div class="ci-tick" id="tick-c2"></div>
     </div>
     <div class="ci" id="nav-c3" onclick="openCourse(3)">
       <div class="ci-icon" style="background:rgba(245,158,11,.12);">📡</div>
-      <div class="ci-info"><div class="ci-name">How Far Can It Go?</div><div class="ci-meta">3 slides · 7 min</div></div>
-      <div class="ci-tick" id="tick-c3"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">How Far Can It Go?</div><div class="ci-meta">3 slides · 7 min</div></div>
+      <div class="ci-tick" id="tick-c3"></div>
     </div>
     <div class="ci" id="nav-c4" onclick="openCourse(4)">
       <div class="ci-icon" style="background:rgba(34,197,94,.12);">📊</div>
-      <div class="ci-info"><div class="ci-name">The Impact</div><div class="ci-meta">3 slides · 6 min</div></div>
-      <div class="ci-tick" id="tick-c4"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">The Impact</div><div class="ci-meta">3 slides · 6 min</div></div>
+      <div class="ci-tick" id="tick-c4"></div>
     </div>
     <div class="ci" id="nav-c5" onclick="openCourse(5)">
       <div class="ci-icon" style="background:rgba(79,70,229,.12);">⚡</div>
-      <div class="ci-info"><div class="ci-name">Demo Playbook</div><div class="ci-meta">4 slides · 8 min</div></div>
-      <div class="ci-tick" id="tick-c5"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">Demo Playbook</div><div class="ci-meta">4 slides · 8 min</div></div>
+      <div class="ci-tick" id="tick-c5"></div>
     </div>
     <div class="ci" id="nav-c6" onclick="openCourse(6)">
       <div class="ci-icon" style="background:rgba(79,70,229,.12);">✉️</div>
-      <div class="ci-info"><div class="ci-name">The Follow-Up</div><div class="ci-meta">4 slides · 8 min</div></div>
-      <div class="ci-tick" id="tick-c6"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">The Follow-Up</div><div class="ci-meta">4 slides · 8 min</div></div>
+      <div class="ci-tick" id="tick-c6"></div>
     </div>
     <div class="ci" id="nav-c7" onclick="openCourse(7)">
       <div class="ci-icon" style="background:rgba(239,68,68,.12);">📞</div>
-      <div class="ci-info"><div class="ci-name">Handle the Objection</div><div class="ci-meta">3 slides · 6 min</div></div>
-      <div class="ci-tick" id="tick-c7"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">Handle the Objection</div><div class="ci-meta">3 slides · 6 min</div></div>
+      <div class="ci-tick" id="tick-c7"></div>
     </div>
     <div class="ci" id="nav-c8" onclick="openCourse(8)">
       <div class="ci-icon" style="background:rgba(34,197,94,.12);">🏆</div>
-      <div class="ci-info"><div class="ci-name">Deal Closed</div><div class="ci-meta">The finale</div></div>
-      <div class="ci-tick" id="tick-c8"><svg viewBox="0 0 12 12" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></div>
+      <div><div class="ci-name">Deal Closed</div><div class="ci-meta">The finale</div></div>
+      <div class="ci-tick" id="tick-c8"></div>
     </div>
   </div>
 </div>
 
-
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div class="main-c">
-
 
 <!-- HOME -->
 <div class="scene active" id="scene-home">
-  <div class="home-c">
-    <div class="home-eye">LearnUpon Anywhere · SE Training</div>
-    <h1 class="home-h">Master the <span>Anywhere</span> Sale</h1>
-    <p class="home-sub">Eight courses. Real scenarios. One story from inbound lead to closed deal. Powered by your actual collateral — not invented content.</p>
-    <div class="home-stats">
-      <div class="stat"><div class="sn">8</div><div class="sl">Courses</div></div>
-      <div class="stat"><div class="sn">90</div><div class="sl">Minutes</div></div>
-      <div class="stat"><div class="sn">1</div><div class="sl">Story</div></div>
-    </div>
-    <button class="btn-start" onclick="openCourse(1)">Start Course 1 →</button>
+  <div class="home-eye">LearnUpon Anywhere · SE Training</div>
+  <h1 class="home-h">Master the <span>Anywhere</span> Sale</h1>
+  <p class="home-sub">Eight courses. Real scenarios. One story from inbound lead to closed deal. Built from your actual collateral.</p>
+  <div class="home-stats">
+    <div class="stat"><div class="sn">8</div><div class="sl">Courses</div></div>
+    <div class="stat"><div class="sn">90</div><div class="sl">Minutes</div></div>
+    <div class="stat"><div class="sn">1</div><div class="sl">Story</div></div>
   </div>
+  <button class="btn-start" onclick="openCourse(1)">Start Course 1 →</button>
 </div>
-
 
 <!-- COURSE 1: The Inbound Lead -->
 <div class="scene ss" id="scene-c1">
@@ -397,53 +369,53 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="ss-dots" id="dots-c1"></div>
   </div>
   <div class="ss-body" id="slides-c1">
-    <!-- 1-1: Calm desktop -->
-    <div class="slide active" id="c1s1">
-      <div style="background:linear-gradient(135deg,#0F172A 0%,#1B2B4B 100%);width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-        <div style="background:#1E293B;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.07);width:480px;">
-          <div style="background:#0F172A;height:32px;display:flex;align-items:center;padding:0 12px;gap:5px;">
-            <div style="width:9px;height:9px;border-radius:50%;background:#FF5F57;"></div>
-            <div style="width:9px;height:9px;border-radius:50%;background:#FFBD2E;margin-left:2px;"></div>
-            <div style="width:9px;height:9px;border-radius:50%;background:#28C840;margin-left:2px;"></div>
-          </div>
-          <div style="padding:32px;text-align:center;color:rgba(255,255,255,.28);font-size:13px;">Monday, 9:14am. Quiet morning. Nothing happening yet...</div>
+    <div class="slide active" id="c1s1" style="background:linear-gradient(135deg,#0F172A,#1B2B4B);">
+      <div style="background:#1E293B;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.07);width:480px;">
+        <div style="background:#0F172A;height:32px;display:flex;align-items:center;padding:0 12px;gap:5px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#FF5F57;"></div>
+          <div style="width:9px;height:9px;border-radius:50%;background:#FFBD2E;margin-left:2px;"></div>
+          <div style="width:9px;height:9px;border-radius:50%;background:#28C840;margin-left:2px;"></div>
         </div>
+        <div style="padding:32px;text-align:center;color:rgba(255,255,255,.28);font-size:13px;">Monday, 9:14am. Quiet morning. Nothing happening yet...</div>
       </div>
     </div>
-    <!-- 1-2: Notification -->
-    <div class="slide" id="c1s2">
-      <div style="background:linear-gradient(135deg,#0F172A 0%,#1B2B4B 100%);width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;">
-        <div style="background:#1E293B;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.07);width:480px;">
-          <div style="background:#0F172A;height:32px;display:flex;align-items:center;padding:0 12px;gap:5px;">
-            <div style="width:9px;height:9px;border-radius:50%;background:#FF5F57;"></div>
-            <div style="width:9px;height:9px;border-radius:50%;background:#FFBD2E;margin-left:2px;"></div>
-            <div style="width:9px;height:9px;border-radius:50%;background:#28C840;margin-left:2px;"></div>
-          </div>
-          <div style="padding:32px;text-align:center;color:rgba(255,255,255,.28);font-size:13px;">Monday, 9:14am. Quiet morning. Nothing happening yet...</div>
+    <div class="slide" id="c1s2" style="background:linear-gradient(135deg,#0F172A,#1B2B4B);">
+      <div style="background:#1E293B;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.07);width:480px;">
+        <div style="background:#0F172A;height:32px;display:flex;align-items:center;padding:0 12px;gap:5px;">
+          <div style="width:9px;height:9px;border-radius:50%;background:#FF5F57;"></div>
+          <div style="width:9px;height:9px;border-radius:50%;background:#FFBD2E;margin-left:2px;"></div>
+          <div style="width:9px;height:9px;border-radius:50%;background:#28C840;margin-left:2px;"></div>
         </div>
-        <div class="notif" id="notifPop">
-          <div class="notif-top"><div class="n-dot"></div><div class="n-app">Salesforce · New Lead Assigned</div></div>
-          <div class="notif-body">
-            <div class="n-title">🔥 Inbound: NorthStar Retail</div>
-            <div class="n-text">3,200 employees · 180 UK stores · Head of L&D requesting Anywhere demo. Completion rate: 34%. Mobile-first workforce. Urgent.</div>
-            <div class="n-meta"><span class="n-time">just now</span><button class="n-btn" onclick="nextSlide()">View →</button></div>
+        <div style="padding:32px;text-align:center;color:rgba(255,255,255,.28);font-size:13px;">Monday, 9:14am. Quiet morning. Nothing happening yet...</div>
+      </div>
+      <div class="notif" id="notifPop">
+        <div class="notif-top"><div class="n-dot"></div><div class="n-app">Salesforce · New Lead Assigned</div></div>
+        <div class="notif-body">
+          <div class="n-title">🔥 Inbound: NorthStar Retail</div>
+          <div class="n-text">3,200 employees · 180 UK stores · Head of L&D requesting Anywhere demo. Completion rate: 34%. Mobile-first workforce. Urgent.</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;">
+            <span style="font-size:10.5px;color:rgba(0,0,0,.32);">just now</span>
+            <button class="n-btn" onclick="nextSlide()">View →</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- 1-3: Lead card -->
     <div class="slide" id="c1s3" style="background:#F7F9FC;">
       <div class="lead-card">
-        <div class="lead-tag"><div class="lead-tag-dot"></div>New inbound · Anywhere fit: HIGH</div>
+        <div class="live-tag"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 1s infinite;display:inline-block;"></span> New inbound · Anywhere fit: HIGH</div>
         <div class="lead-co">NorthStar Retail</div>
-        <div class="lead-det">Sarah Chen, Head of L&D · 3,200 employees across 180 UK stores · 600 seasonal hires every summer. Current LMS completion rate sits at 34%. Staff are on the shop floor all day — they never reach a desktop.</div>
+        <div class="lead-det">Sarah Chen, Head of L&D · 3,200 employees across 180 UK stores · 600 seasonal hires every summer. Current completion rate 34%. Staff on the shop floor — never at a desktop.</div>
         <div class="chips">
-          <div class="chip">Retail</div><div class="chip">3,200 employees</div><div class="chip">Mobile-first</div><div class="chip hot">Compliance risk</div><div class="chip hot">Urgent</div>
+          <span class="chip">Retail</span>
+          <span class="chip">3,200 employees</span>
+          <span class="chip">Mobile-first</span>
+          <span class="chip hot">Compliance risk</span>
+          <span class="chip hot">Urgent</span>
         </div>
-        <div class="lead-note"><strong>Use case signal:</strong> Frontline &amp; field enablement. Training must work on phones, offline capable, zero friction login. Classic Anywhere play.</div>
+        <div class="lead-note"><strong>Use case signal:</strong> Frontline enablement. Training must work on phones, zero friction login. Classic Anywhere play.</div>
         <div class="lead-acts">
-          <button class="la-btn sec">Save to pipeline</button>
-          <button class="la-btn pri" onclick="nextSlide()">Prep the demo →</button>
+          <button class="la-btn la-sec">Save to pipeline</button>
+          <button class="la-btn la-pri" onclick="nextSlide()">Prep the demo →</button>
         </div>
       </div>
     </div>
@@ -455,7 +427,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
 </div>
 
-
 <!-- COURSE 2: What is Anywhere Really? -->
 <div class="scene ss" id="scene-c2">
   <div class="ss-hdr">
@@ -463,61 +434,85 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="ss-dots" id="dots-c2"></div>
   </div>
   <div class="ss-body" id="slides-c2">
-    <!-- 2-1: Make the LMS Disappear -->
     <div class="slide active" id="c2s1" style="background:#0F172A;">
       <div style="max-width:600px;width:100%;text-align:center;">
         <div style="font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:1rem;">Our Vision</div>
-        <div style="font-size:42px;font-weight:700;color:var(--white);line-height:1.1;margin-bottom:1rem;">Make the LMS <span style="color:var(--teal);">Disappear.</span></div>
-        <div style="font-size:15px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:2rem;">LearnUpon Anywhere is a completely new way to deliver learning by enabling businesses to seamlessly integrate courses into any product experience — so learners never have to go elsewhere.</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
-          ${[["🎯","Meet learners where they are","Embed LearnUpon into any app, portal, or website. Training appears in the tool they already use."],["⏱️","Right learning, right time","Serve content in context — right people, right learning, right moment. SSO streamlines the flow."],["🛰️","LMS as mission control","Admins build and manage everything inside LearnUpon. Delivery happens everywhere. One source of truth."]].map(([icon,title,body])=>`<div style="background:rgba(255,255,255,.05);border-radius:10px;padding:1rem;border:1px solid rgba(255,255,255,.08);text-align:left;"><div style="font-size:20px;margin-bottom:8px;">${icon}</div><div style="font-size:12.5px;font-weight:600;color:var(--white);margin-bottom:5px;">${title}</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.55;">${body}</div></div>`).join('')}
+        <div style="font-size:42px;font-weight:700;line-height:1.1;margin-bottom:1rem;">Make the LMS <span style="color:var(--teal);">Disappear.</span></div>
+        <div style="font-size:15px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:2rem;">LearnUpon Anywhere enables businesses to seamlessly integrate courses into any product experience — so learners never have to go elsewhere.</div>
+        <div class="grid3">
+          <div class="vis-card"><div class="vis-icon">🎯</div><div class="vis-title">Meet learners where they are</div><div class="vis-body">Embed LearnUpon into any app, portal, or website. Training appears in the tool they already use.</div></div>
+          <div class="vis-card"><div class="vis-icon">⏱️</div><div class="vis-title">Right learning, right time</div><div class="vis-body">Serve content in context using SSO to streamline flows. Right people, right learning, right moment.</div></div>
+          <div class="vis-card"><div class="vis-icon">🛰️</div><div class="vis-title">LMS as mission control</div><div class="vis-body">Build in LearnUpon. Deliver everywhere. Track in one place. Admins manage everything as usual.</div></div>
         </div>
       </div>
     </div>
-    <!-- 2-2: Two Options -->
     <div class="slide" id="c2s2" style="background:#F7F9FC;">
       <div style="max-width:640px;width:100%;">
         <div style="text-align:center;margin-bottom:1.25rem;">
           <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:.5rem;">Two Implementation Options</div>
           <div style="font-size:20px;font-weight:600;color:var(--navy);">You decide where, when, and how learning appears</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-          <div style="background:white;border-radius:12px;padding:1.4rem;border:2px solid var(--teal);">
-            <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;">Option 1</div>
-            <div style="font-size:17px;font-weight:600;color:var(--navy);margin-bottom:.6rem;">🚀 Grab &amp; Go</div>
-            <div style="font-size:12px;color:var(--slate);line-height:1.6;margin-bottom:.9rem;">LearnUpon provides a code snippet. Copy, paste, done. Static learning that is the same for everyone. No developer needed for basics.</div>
-            <div style="font-size:11px;font-weight:600;color:var(--green-dk);margin-bottom:4px;">Best for:</div>
-            ${["Static learning content","Quick embed with no personalisation","Low technical resource available"].map(t=>`<div style="font-size:11px;color:var(--slate);padding:3px 0;border-bottom:1px solid #F0FFF4;">✓ ${t}</div>`).join('')}
+        <div class="grid2">
+          <div class="opt-card" style="border:2px solid var(--teal);">
+            <div class="opt-label" style="color:var(--teal);">Option 1</div>
+            <div class="opt-title">🚀 Grab &amp; Go</div>
+            <div class="opt-desc">LearnUpon provides a code snippet. Copy, paste, done. Static learning — same for everyone. No developer needed for basics.</div>
+            <div class="opt-best" style="color:var(--green-dk);">Best for:</div>
+            <div class="opt-item">✓ Static learning content</div>
+            <div class="opt-item">✓ Quick embed with no personalisation</div>
+            <div class="opt-item">✓ Low or no dev resource available</div>
           </div>
-          <div style="background:white;border-radius:12px;padding:1.4rem;border:2px solid var(--indigo);">
-            <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:var(--indigo);text-transform:uppercase;margin-bottom:.6rem;">Option 2</div>
-            <div style="font-size:17px;font-weight:600;color:var(--navy);margin-bottom:.6rem;">⚙️ Custom iFrame</div>
-            <div style="font-size:12px;color:var(--slate);line-height:1.6;margin-bottom:.9rem;">You build the iFrame. You decide the where (profile page, training tab), the when (on login, on trigger), and the how (modal, inline, full-page).</div>
-            <div style="font-size:11px;font-weight:600;color:var(--indigo);margin-bottom:4px;">Best for:</div>
-            ${["Dynamic &amp; personalised learning","SSO + API + Webhook integration","Real-time completions feeding back to your system"].map(t=>`<div style="font-size:11px;color:var(--slate);padding:3px 0;border-bottom:1px solid #EEF2FF;">✓ ${t}</div>`).join('')}
+          <div class="opt-card" style="border:2px solid var(--indigo);">
+            <div class="opt-label" style="color:var(--indigo);">Option 2</div>
+            <div class="opt-title">⚙️ Custom iFrame</div>
+            <div class="opt-desc">You build the iFrame. You decide the where (profile page, training tab), the when (on login, on trigger), and the how (modal, inline, full-page).</div>
+            <div class="opt-best" style="color:var(--indigo);">Best for:</div>
+            <div class="opt-item">✓ Dynamic and personalised learning</div>
+            <div class="opt-item">✓ SSO + API + Webhook integration</div>
+            <div class="opt-item">✓ Real-time completions feeding back to your system</div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 2-3: Webhooks power -->
     <div class="slide" id="c2s3" style="background:#F7F9FC;">
       <div style="max-width:620px;width:100%;">
         <div style="text-align:center;margin-bottom:1.25rem;">
           <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:.5rem;">What powers the experience</div>
           <div style="font-size:20px;font-weight:600;color:var(--navy);">APIs + Webhooks = a real-time learning layer</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          ${[["🔌","REST API","User provisioning &amp; management. Group creation. Enrollment creation, reporting, marking complete. GET /courses · POST /enrollments · GET /enrollments/search"],["🔔","Webhooks","Two-way real-time data. Fires events as they happen — no polling needed. Course published. Module completed. Learning path completed. Badge awarded."],["🔐","SSO — SAML or SQSSO","Learner is already authenticated. One click and they are in their course. forEmbed=true hides the LMS UI. redirect_uri sends them directly to their enrollment."],["📋","Discovery Questions","Ask these before scoping: Where do learners access training today? How do they log in? Is mobile-first critical? Do you have dev resource? What triggers learning?"]].map(([icon,title,body])=>`<div style="background:white;border-radius:10px;padding:1.1rem;border:1px solid var(--border);"><div style="font-size:18px;margin-bottom:6px;">${icon}</div><div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">${title}</div><div style="font-size:11px;color:var(--slate);line-height:1.6;">${body}</div></div>`).join('')}
+        <div class="grid2">
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:18px;margin-bottom:6px;">🔌</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">REST API</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">User provisioning and management. Group creation. Enrollment creation, reporting, marking complete. GET /courses · POST /enrollments · GET /enrollments/search</div>
+          </div>
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:18px;margin-bottom:6px;">🔔</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">Webhooks</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">Two-way real-time data. Fires as events happen — no polling needed. Course published. Module completed. Learning path completed. Badge awarded.</div>
+          </div>
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:18px;margin-bottom:6px;">🔐</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">SSO — SAML or SQSSO</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">Learner already authenticated. One click and they are in their course. forEmbed=true hides the LMS UI. redirect_uri sends them directly to their enrollment.</div>
+          </div>
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:18px;margin-bottom:6px;">📋</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">Discovery Questions</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">Where do learners access training today? How do they log in? Is mobile-first critical? Do you have dev resource? What triggers learning?</div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- 2-4: Make learning part of journey -->
     <div class="slide" id="c2s4" style="background:var(--navy);">
       <div style="max-width:560px;width:100%;text-align:center;">
-        <div style="font-size:14px;color:rgba(255,255,255,.45);margin-bottom:1.5rem;line-height:1.7;">Sometimes referred to as a <strong style="color:var(--teal);">"Headless LMS solution"</strong> — LearnUpon manages, delivers, and tracks learning no matter where it is happening.</div>
-        <div style="font-size:38px;font-weight:700;color:var(--white);line-height:1.15;margin-bottom:1.5rem;">Make learning part of the <span style="color:var(--teal);">journey.</span><br>Not the destination.</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.45);margin-bottom:1.5rem;line-height:1.7;">Sometimes called a <strong style="color:var(--teal);">"Headless LMS solution"</strong> — LearnUpon manages, delivers, and tracks learning no matter where it is happening.</div>
+        <div style="font-size:38px;font-weight:700;line-height:1.15;margin-bottom:1.5rem;">Make learning part of the <span style="color:var(--teal);">journey.</span><br>Not the destination.</div>
         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-          ${["Learner never leaves their workflow","Completion tracked automatically","LMS admin sees everything in one place","1 Billion requests/month scalability incoming"].map(t=>`<div style="background:rgba(0,169,165,.15);border:1px solid rgba(0,169,165,.3);border-radius:18px;padding:5px 14px;font-size:12px;color:var(--teal);">${t}</div>`).join('')}
+          <div style="background:rgba(0,169,165,.15);border:1px solid rgba(0,169,165,.3);border-radius:18px;padding:5px 14px;font-size:12px;color:var(--teal);">Learner never leaves their workflow</div>
+          <div style="background:rgba(0,169,165,.15);border:1px solid rgba(0,169,165,.3);border-radius:18px;padding:5px 14px;font-size:12px;color:var(--teal);">Completion tracked automatically</div>
+          <div style="background:rgba(0,169,165,.15);border:1px solid rgba(0,169,165,.3);border-radius:18px;padding:5px 14px;font-size:12px;color:var(--teal);">LMS admin sees everything in one place</div>
+          <div style="background:rgba(0,169,165,.15);border:1px solid rgba(0,169,165,.3);border-radius:18px;padding:5px 14px;font-size:12px;color:var(--teal);">1 Billion requests/month scalability incoming</div>
         </div>
       </div>
     </div>
@@ -529,7 +524,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
 </div>
 
-
 <!-- COURSE 3: How Far Can It Go? -->
 <div class="scene ss" id="scene-c3">
   <div class="ss-hdr">
@@ -537,71 +531,97 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="ss-dots" id="dots-c3"></div>
   </div>
   <div class="ss-body" id="slides-c3">
-    <!-- 3-1: Mobile app types -->
     <div class="slide active" id="c3s1" style="background:#F7F9FC;">
       <div style="max-width:620px;width:100%;">
         <div style="text-align:center;margin-bottom:1.1rem;">
           <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:.4rem;">Before you scope a mobile deal</div>
           <div style="font-size:20px;font-weight:600;color:var(--navy);">Three mobile app types. One question to ask first.</div>
-          <div style="font-size:12.5px;color:var(--slate);margin-top:.4rem;">"How is your app built?" — this one question changes everything about the Anywhere conversation.</div>
+          <div style="font-size:12.5px;color:var(--slate);margin-top:.4rem;">"How is your app built?" — ask this before anything else.</div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          ${[[1,"Native","Built 100% in Swift (iOS) or Kotlin/Java (Android). No wrappers. Fully custom code.","Anywhere NOT natively supported. Requires a Webview. High dev effort. Test everything first.","var(--red)","⚠️ Significant limitations"],
-             [2,"Pure Hybrid (Wrapper)","Just enough native code to load on phone. The rest loads an external site — like LearnUpon — inside a WebView wrapper.","Anywhere works well here. Minor limitations: video/audio download blocked, assignment recording needs a code fix.","var(--amber)","⚡ Minor limitations — fixable"],
-             [3,"Cross-Platform Hybrid","Mix of Native and Javascript (React Native, Flutter). Uses a wrapper like Pure Hybrid.","Same as Pure Hybrid. Large dependency on developer competency. Test thoroughly before committing.","var(--amber)","⚡ Minor limitations — fixable"],
-             [0,"Desktop & Mobile Browser","Standard web browser — Chrome, Safari, Firefox on desktop or mobile.","Fully supported. SCORM/xAPI works. White-labelled portals supported. Best starting point for most deals.","var(--green)","✅ Fully supported"]
-          ].map(([n,title,desc,note,color,badge])=>`<div style="display:flex;gap:12px;background:white;border-radius:9px;padding:11px 14px;border:1px solid var(--border);">
-            <div style="width:28px;height:28px;border-radius:7px;background:${color};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0;">${n||'B'}</div>
-            <div style="flex:1;">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;"><span style="font-size:13px;font-weight:600;color:var(--navy);">${title}</span><span style="font-size:9.5px;font-weight:600;padding:1px 7px;border-radius:10px;background:${color}22;color:${color};">${badge}</span></div>
-              <div style="font-size:11px;color:var(--slate);line-height:1.5;">${desc}</div>
-              <div style="font-size:11px;color:rgba(0,0,0,.5);margin-top:3px;font-style:italic;">${note}</div>
-            </div>
-          </div>`).join('')}
+        <div class="app-row">
+          <div class="app-num" style="background:var(--red);">01</div>
+          <div>
+            <div style="display:flex;align-items:center;"><span class="app-name">Native</span><span class="app-badge" style="background:var(--red-lt);color:var(--red-dk);">⚠️ Significant limitations</span></div>
+            <div class="app-desc">Built 100% in Swift (iOS) or Kotlin/Java (Android). No wrappers. Fully custom code.</div>
+            <div class="app-note">Anywhere NOT natively supported. Requires a Webview. High dev effort. Test everything first.</div>
+          </div>
+        </div>
+        <div class="app-row">
+          <div class="app-num" style="background:var(--amber);">02</div>
+          <div>
+            <div style="display:flex;align-items:center;"><span class="app-name">Pure Hybrid (Wrapper)</span><span class="app-badge" style="background:var(--amber-lt);color:#92400E;">⚡ Minor limitations — fixable</span></div>
+            <div class="app-desc">Just enough native code to load on phone. The rest loads an external site — like LearnUpon — in a WebView wrapper.</div>
+            <div class="app-note">Anywhere works well here. Video/audio download blocked, assignment recording needs a code fix.</div>
+          </div>
+        </div>
+        <div class="app-row">
+          <div class="app-num" style="background:var(--amber);">03</div>
+          <div>
+            <div style="display:flex;align-items:center;"><span class="app-name">Cross-Platform Hybrid</span><span class="app-badge" style="background:var(--amber-lt);color:#92400E;">⚡ Minor limitations — fixable</span></div>
+            <div class="app-desc">Mix of Native and JavaScript (React Native, Flutter). Uses a wrapper like Pure Hybrid.</div>
+            <div class="app-note">Same as Pure Hybrid. Large dependency on developer competency. Test thoroughly before committing.</div>
+          </div>
+        </div>
+        <div class="app-row">
+          <div class="app-num" style="background:var(--green);">B</div>
+          <div>
+            <div style="display:flex;align-items:center;"><span class="app-name">Desktop &amp; Mobile Browser</span><span class="app-badge" style="background:var(--green-lt);color:var(--green-dk);">✅ Fully supported</span></div>
+            <div class="app-desc">Standard web browser on any device. No app architecture concerns.</div>
+            <div class="app-note">Fully supported. All module types work. SCORM/xAPI works. Best starting point for most deals.</div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- 3-2: Compatibility matrix -->
     <div class="slide" id="c3s2" style="background:#F7F9FC;">
       <div style="max-width:680px;width:100%;">
         <div style="text-align:center;margin-bottom:1rem;">
           <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:.4rem;">Module compatibility</div>
-          <div style="font-size:19px;font-weight:600;color:var(--navy);">What works where — know this before you demo</div>
+          <div style="font-size:19px;font-weight:600;color:var(--navy);">What works where — know this before every demo</div>
         </div>
-        <div style="background:white;border-radius:10px;overflow:hidden;border:1px solid var(--border);">
-          <table class="compat-table" style="width:100%;">
-            <thead><tr><th>Module type</th><th>Desktop browser</th><th>Mobile browser</th><th>Hybrid app</th><th>Notes</th></tr></thead>
+        <div class="card" style="padding:0;overflow:hidden;">
+          <table class="compat">
+            <thead><tr><th>Module type</th><th>Desktop</th><th>Mobile browser</th><th>Hybrid app</th><th>Notes</th></tr></thead>
             <tbody>
-              <tr><td style="font-weight:500;">Text, Images, Documents</td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td style="font-size:10.5px;color:var(--slate);">No limitations</td></tr>
-              <tr><td style="font-weight:500;">Video</td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-minor">⚡ Minor</span></td><td style="font-size:10.5px;color:var(--slate);">Cannot download — opens in new tab on hybrid</td></tr>
-              <tr><td style="font-weight:500;">Audio</td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-minor">⚡ Minor</span></td><td style="font-size:10.5px;color:var(--slate);">Same as video — download blocked</td></tr>
-              <tr><td style="font-weight:500;">SCORM / xAPI</td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td style="font-size:10.5px;color:var(--slate);">Requires Webview on Native only</td></tr>
-              <tr><td style="font-weight:500;">Assignment recording</td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-minor">⚡ Minor</span></td><td><span class="badge-minor">⚡ Minor</span></td><td style="font-size:10.5px;color:var(--slate);">Needs iFrame permission — fixable with code</td></tr>
-              <tr><td style="font-weight:500;">Survey / Exams</td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td><span class="badge-full">✅ Full</span></td><td style="font-size:10.5px;color:var(--slate);">May require Webview on native</td></tr>
-              <tr><td style="font-weight:500;">Native mobile app</td><td>N/A</td><td>N/A</td><td><span class="badge-no">⛔ Not supported</span></td><td style="font-size:10.5px;color:var(--slate);">Requires Webview. High dev effort. Full test advised.</td></tr>
+              <tr><td style="font-weight:500;">Text, Images, Documents</td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td style="font-size:10px;color:var(--slate);">No limitations</td></tr>
+              <tr><td style="font-weight:500;">Video</td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-warn">⚡ Minor</span></td><td style="font-size:10px;color:var(--slate);">Cannot download on hybrid — opens in new tab</td></tr>
+              <tr><td style="font-weight:500;">Audio</td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-warn">⚡ Minor</span></td><td style="font-size:10px;color:var(--slate);">Same as video — download blocked</td></tr>
+              <tr><td style="font-weight:500;">SCORM / xAPI</td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td style="font-size:10px;color:var(--slate);">Requires Webview on native only</td></tr>
+              <tr><td style="font-weight:500;">Assignment recording</td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-warn">⚡ Minor</span></td><td><span class="badge-warn">⚡ Minor</span></td><td style="font-size:10px;color:var(--slate);">Needs iFrame permission — fixable with code</td></tr>
+              <tr><td style="font-weight:500;">Surveys / Exams</td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td><span class="badge-ok">✅ Full</span></td><td style="font-size:10px;color:var(--slate);">May require Webview on native</td></tr>
+              <tr><td style="font-weight:500;">Native mobile app</td><td>N/A</td><td>N/A</td><td><span class="badge-no">⛔ Not supported</span></td><td style="font-size:10px;color:var(--slate);">Requires Webview. High dev effort. Full test advised.</td></tr>
             </tbody>
           </table>
         </div>
-        <div style="background:#FEF3C7;border-radius:7px;padding:9px 12px;margin-top:10px;font-size:11.5px;color:#92400E;"><strong>Competitor note:</strong> Absorb and Docebo have "headless" LMS solutions — but LUA is the most lightweight and easiest to implement. Competitors do not support Native either and have similar hybrid limitations.</div>
+        <div style="background:var(--amber-lt);border-radius:7px;padding:9px 12px;margin-top:10px;font-size:11.5px;color:#92400E;"><strong>Competitor note:</strong> Absorb and Docebo have headless LMS solutions — LUA is the most lightweight and easiest to implement. Neither competitor supports Native either.</div>
       </div>
     </div>
-    <!-- 3-3: The honest conversation -->
     <div class="slide" id="c3s3" style="background:#F7F9FC;">
       <div style="max-width:600px;width:100%;">
         <div style="text-align:center;margin-bottom:1.25rem;">
           <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--navy);text-transform:uppercase;margin-bottom:.4rem;">The honest conversation</div>
           <div style="font-size:20px;font-weight:600;color:var(--navy);">Knowing the limits is what builds trust</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-          ${[["When to say yes confidently","Background: desktop browser or hybrid mobile app. Has SSO already set up. Has developer resource. Content is text, video, SCORM. Not relying on assignment recording.",var(--green),"✅"],
-             ["When to scope carefully","Prospect says 'mobile-first' — ask which app type first. Native app with no Webview planned. SCORM dispatched from external tool. Assignment recording required on mobile.",var(--amber),"⚡"],
-             ["What to always ask","How is your app built — native, hybrid, or browser-based? How do users log in today? Do you have dev resource for the iFrame build? What content types are you using?",var(--indigo),"🔍"],
-             ["What kills deals silently","Promising full mobile support without knowing the app architecture. Not asking about SSO setup early. Demoing desktop only when they want mobile. Skipping technical scoping.",var(--red),"⚠️"]
-          ].map(([title,body,color,icon])=>`<div style="background:white;border-radius:10px;padding:1.1rem;border:1px solid var(--border);">
-            <div style="font-size:14px;margin-bottom:6px;">${icon}</div>
-            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">${title}</div>
-            <div style="font-size:11px;color:var(--slate);line-height:1.6;">${body}</div>
-          </div>`).join('')}
+        <div class="grid2">
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:14px;margin-bottom:6px;">✅</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">When to say yes confidently</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">Desktop browser or hybrid mobile app. Has SSO already set up. Has dev resource. Content is text, video, SCORM. Not relying on assignment recording on mobile.</div>
+          </div>
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:14px;margin-bottom:6px;">⚡</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">When to scope carefully</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">Prospect says "mobile-first" — ask which app type first. Native app with no Webview planned. SCORM dispatched from external tool. Assignment recording required on mobile.</div>
+          </div>
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:14px;margin-bottom:6px;">🔍</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">What to always ask</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">How is your app built — native, hybrid, or browser? How do users log in today? Do you have dev resource? What content types are you using?</div>
+          </div>
+          <div class="card" style="padding:1.1rem;">
+            <div style="font-size:14px;margin-bottom:6px;">⚠️</div>
+            <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px;">What kills deals silently</div>
+            <div style="font-size:11px;color:var(--slate);line-height:1.6;">Promising full mobile support without knowing the app architecture. Not asking about SSO setup early. Demoing desktop only when they want mobile.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -613,7 +633,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
 </div>
 
-
 <!-- COURSE 4: The Impact -->
 <div class="scene ss" id="scene-c4">
   <div class="ss-hdr">
@@ -621,7 +640,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="ss-dots" id="dots-c4"></div>
   </div>
   <div class="ss-body" id="slides-c4">
-    <!-- 4-1: Impact wall -->
     <div class="slide active" id="c4s1" style="background:#F7F9FC;">
       <div style="max-width:680px;width:100%;text-align:center;">
         <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;">The impact of customer education</div>
@@ -636,29 +654,33 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
         </div>
       </div>
     </div>
-    <!-- 4-2: Chick-fil-A case -->
     <div class="slide" id="c4s2" style="background:#F7F9FC;">
       <div style="max-width:600px;width:100%;">
-        <div style="background:white;border-radius:14px;padding:1.75rem;border:1px solid var(--border);margin-bottom:12px;">
-          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;">Customer example · Retail / Food Service</div>
-          <div style="font-size:22px;font-weight:700;color:var(--navy);margin-bottom:.75rem;">🍔 Chick-fil-A</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.9rem;">
-            ${[["Integration","CFA 'Pathway' employee app. Learners access shifts, company info, and training — all in one app. LU compliance courses embedded directly."],["Scale","300,000+ users across 3,000 US restaurants. High-turnover industry — users added and removed constantly. Scalability built in."],["Goal","Compliance training critical in food service. Completion data tracked in LU — pass/fail, scores, attendance, all reportable."],["Result","Reduces barriers to access training. Increases completion rates. Learners open training right within the Pathway app and complete."]].map(([l,v])=>`<div style="background:var(--off);border-radius:8px;padding:.9rem;border:1px solid var(--border);"><div style="font-size:10px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">${l}</div><div style="font-size:12px;color:var(--slate);line-height:1.55;">${v}</div></div>`).join('')}
+        <div class="card">
+          <div class="case-header" style="color:var(--teal);">Customer example · Retail / Food Service</div>
+          <div class="case-title">🍔 Chick-fil-A</div>
+          <div class="case-grid">
+            <div class="case-item"><div class="case-lbl" style="color:var(--teal);">Integration</div><div class="case-val">CFA 'Pathway' employee app. Learners access shifts, company info, and training all in one place. LU compliance courses embedded directly.</div></div>
+            <div class="case-item"><div class="case-lbl" style="color:var(--teal);">Scale</div><div class="case-val">300,000+ users across 3,000 US restaurants. High-turnover industry — users added and removed constantly. Scalability built in.</div></div>
+            <div class="case-item"><div class="case-lbl" style="color:var(--teal);">Goal</div><div class="case-val">Compliance training critical in food service. Pass/fail, scores, attendance all tracked in LU reporting.</div></div>
+            <div class="case-item"><div class="case-lbl" style="color:var(--teal);">Result</div><div class="case-val">Reduces barriers to training. Increases completion rates. Learners open and complete training right within the Pathway app.</div></div>
           </div>
-          <div style="background:#DCFCE7;border-radius:7px;padding:9px 12px;font-size:12px;color:var(--green-dk);">Use this for: Retail, food service, any frontline workforce prospect who says "our staff are never at a desk."</div>
+          <div class="case-tip" style="background:var(--green-lt);color:var(--green-dk);">Use this for: Retail, food service, any frontline workforce prospect who says "our staff are never at a desk."</div>
         </div>
       </div>
     </div>
-    <!-- 4-3: Visa proof -->
     <div class="slide" id="c4s3" style="background:#F7F9FC;">
       <div style="max-width:600px;width:100%;">
-        <div style="background:white;border-radius:14px;padding:1.75rem;border:1px solid var(--border);margin-bottom:12px;">
-          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--indigo);text-transform:uppercase;margin-bottom:.6rem;">Customer example · Financial services / Enterprise</div>
-          <div style="font-size:22px;font-weight:700;color:var(--navy);margin-bottom:.75rem;">💳 Visa</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.9rem;">
-            ${[["Support reduction","Reduced support team from 5 to 0.5 — a 90% reduction — by transitioning to LearnUpon and embedding training in their customer journey."],["Reliability","1 support ticket for every 10,000 logins. Customers self-serve through embedded learning rather than calling support."],["Mobile social impact","Built a social impact mobile app built entirely around LearnUpon Anywhere. A flagship LUA deployment at scale."],["Early adopter","Member of the LearnUpon Anywhere Early Adopter Program. 256,000 content views via LUA in the last 90 days alone."]].map(([l,v])=>`<div style="background:var(--off);border-radius:8px;padding:.9rem;border:1px solid var(--border);"><div style="font-size:10px;font-weight:600;color:var(--indigo);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">${l}</div><div style="font-size:12px;color:var(--slate);line-height:1.55;">${v}</div></div>`).join('')}
+        <div class="card">
+          <div class="case-header" style="color:var(--indigo);">Customer example · Financial services / Enterprise</div>
+          <div class="case-title">💳 Visa</div>
+          <div class="case-grid">
+            <div class="case-item"><div class="case-lbl" style="color:var(--indigo);">Support reduction</div><div class="case-val">Reduced support team from 5 to 0.5 — a 90% reduction — by transitioning to LearnUpon and embedding training in the customer journey.</div></div>
+            <div class="case-item"><div class="case-lbl" style="color:var(--indigo);">Reliability</div><div class="case-val">1 support ticket for every 10,000 logins. Customers self-serve through embedded learning rather than calling support.</div></div>
+            <div class="case-item"><div class="case-lbl" style="color:var(--indigo);">Mobile impact</div><div class="case-val">Built a social impact mobile app built entirely around LearnUpon Anywhere. A flagship LUA deployment at scale.</div></div>
+            <div class="case-item"><div class="case-lbl" style="color:var(--indigo);">Early adopter</div><div class="case-val">Member of the LUA Early Adopter Program. 256,000 content views via LUA in the last 90 days alone.</div></div>
           </div>
-          <div style="background:#EEF2FF;border-radius:7px;padding:9px 12px;font-size:12px;color:var(--indigo);">Use this for: Financial services, enterprise, any prospect concerned about support cost or scale. "Visa scaled to millions of learners with 1 ticket per 10K logins."</div>
+          <div class="case-tip" style="background:var(--indigo-lt);color:#3730A3;">Use this for: Financial services, enterprise, any prospect concerned about support cost or scale.</div>
         </div>
       </div>
     </div>
@@ -670,7 +692,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
 </div>
 
-
 <!-- COURSE 5: Demo Playbook -->
 <div class="scene ss" id="scene-c5">
   <div class="ss-hdr">
@@ -678,31 +699,31 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="ss-dots" id="dots-c5"></div>
   </div>
   <div class="ss-body" id="slides-c5">
-    <!-- 5-1: Calendar invite -->
     <div class="slide active" id="c5s1" style="background:#F7F9FC;">
       <div style="max-width:480px;width:100%;text-align:center;">
         <div style="font-size:52px;margin-bottom:.9rem;">📅</div>
         <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--indigo);text-transform:uppercase;margin-bottom:.6rem;">Calendar Invite</div>
         <div style="font-size:24px;font-weight:600;color:var(--navy);margin-bottom:.75rem;">SE Required for Demo</div>
-        <div style="background:white;border-radius:11px;padding:1.25rem;border:1px solid var(--border);text-align:left;margin-bottom:1rem;">
+        <div class="card" style="text-align:left;margin-bottom:1rem;">
           <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="font-size:13px;font-weight:600;color:var(--navy);">NorthStar Retail · Discovery &amp; Demo</span><span style="font-size:11.5px;color:var(--slate);">Thu 14:00</span></div>
           <div style="font-size:12.5px;color:var(--slate);line-height:1.65;margin-bottom:10px;">SE to run live Salesforce embed demo. Prospect wants to see training inside their existing CRM. Confirm: mobile demo, completion dashboard, offline capability.</div>
           <div style="display:flex;gap:6px;flex-wrap:wrap;">
-            <div style="font-size:10.5px;background:#DCFCE7;color:#166534;padding:2px 8px;border-radius:10px;font-weight:500;">✓ SF sandbox ready</div>
-            <div style="font-size:10.5px;background:#EEF2FF;color:#3730A3;padding:2px 8px;border-radius:10px;font-weight:500;">✓ Mobile env ready</div>
-            <div style="font-size:10.5px;background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:10px;font-weight:500;">⚠ Confirm SSO type</div>
+            <span style="font-size:10.5px;background:var(--green-lt);color:var(--green-dk);padding:2px 8px;border-radius:10px;font-weight:500;">✓ SF sandbox ready</span>
+            <span style="font-size:10.5px;background:var(--indigo-lt);color:#3730A3;padding:2px 8px;border-radius:10px;font-weight:500;">✓ Mobile env ready</span>
+            <span style="font-size:10.5px;background:var(--amber-lt);color:#92400E;padding:2px 8px;border-radius:10px;font-weight:500;">⚠ Confirm SSO type</span>
           </div>
         </div>
         <div style="font-size:13.5px;color:var(--slate);">Demo environment set. Time to show NorthStar what their world looks like with Anywhere inside it.</div>
       </div>
     </div>
-    <!-- 5-2: Salesforce embed -->
     <div class="slide" id="c5s2" style="background:#F0F4F8;">
       <div class="sf-env" id="sfEnv">
         <div class="sf-hdr">
           <div class="sf-logo">⚡ Salesforce</div>
           <div style="display:flex;gap:10px;">
-            <div class="sf-nav-item">Home</div><div class="sf-nav-item active">Accounts</div><div class="sf-nav-item">Contacts</div>
+            <span class="sf-nav">Home</span>
+            <span class="sf-nav on">Accounts</span>
+            <span class="sf-nav">Contacts</span>
           </div>
         </div>
         <div class="sf-body">
@@ -714,38 +735,44 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
             <div><div class="sf-fl">Next step</div><div class="sf-fv">Demo 14:00 Thu</div></div>
           </div>
           <div class="lu-embed" id="luEmbed">
-            <div class="lu-embed-badge">LearnUpon Anywhere</div>
-            <div class="lu-embed-title">Learning — available right here in Salesforce</div>
-            <div class="lu-course-row"><div class="lu-course-icon">📱</div><div><div class="lu-course-name">Frontline Onboarding — Module 1</div><div class="lu-course-meta">3 min · No login needed · Works offline</div></div></div>
-            <div class="lu-course-row"><div class="lu-course-icon">✅</div><div><div class="lu-course-name">Compliance Essentials</div><div class="lu-course-meta">5 min · Auto-assigns on hire date · Completion tracked</div></div></div>
+            <div class="lu-badge">LearnUpon Anywhere</div>
+            <div class="lu-title">Learning — available right here in Salesforce</div>
+            <div class="lu-row"><div class="lu-icon">📱</div><div><div class="lu-cname">Frontline Onboarding — Module 1</div><div class="lu-cmeta">3 min · No login needed · Works offline</div></div></div>
+            <div class="lu-row"><div class="lu-icon">✅</div><div><div class="lu-cname">Compliance Essentials</div><div class="lu-cmeta">5 min · Auto-assigns on hire date · Completion tracked</div></div></div>
             <div class="lu-cta">View all completions in LearnUpon dashboard →</div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 5-3: 12-min flow -->
     <div class="slide" id="c5s3" style="background:#F7F9FC;">
-      <div class="sec-card" style="max-width:580px;width:100%;">
+      <div class="card" style="max-width:580px;width:100%;">
         <div style="font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:.9rem;">The 12-Minute Anywhere Demo Flow</div>
-        <div id="demoSteps">
-          <div class="demo-step" id="ds1"><div class="ds-num" style="background:var(--teal-lt);color:var(--teal-dk);">1</div><div><div class="ds-title">Context check</div><div class="ds-desc">"I'm going to show how a store manager accesses compliance training in 30 seconds — no login required." Set the scene before touching anything.</div><div class="ds-time" style="color:var(--teal);">90 sec</div></div></div>
-          <div class="demo-step" id="ds2"><div class="ds-num" style="background:var(--indigo-lt);color:var(--indigo);">2</div><div><div class="ds-title">Learner journey</div><div class="ds-desc">Mobile login or embedded view in Salesforce → course opens → completes → completion ticks. One clean end-to-end flow. Let them touch it.</div><div class="ds-time" style="color:var(--indigo);">4 min</div></div></div>
-          <div class="demo-step" id="ds3"><div class="ds-num" style="background:var(--amber-lt);color:#92400E;">3</div><div><div class="ds-title">The wow moment</div><div class="ds-desc">Show offline access OR completion syncing back to Salesforce in real time. The one thing they did not expect. This is what they remember.</div><div class="ds-time" style="color:var(--amber);">2 min</div></div></div>
-          <div class="demo-step" id="ds4"><div class="ds-num" style="background:var(--green-lt);color:var(--green-dk);">4</div><div><div class="ds-title">Their question</div><div class="ds-desc">"How would YOUR team use this?" Then stop talking. Their answer is your follow-up email and your next step.</div><div class="ds-time" style="color:var(--green);">2 min</div></div></div>
-        </div>
+        <div class="step-row" id="ds1"><div class="step-num" style="background:var(--teal-lt);color:var(--teal-dk);">1</div><div><div class="step-title">Context check</div><div class="step-desc">"I'm going to show how a store manager accesses compliance training in 30 seconds — no login required." Set the scene before touching anything.</div><div class="step-time" style="color:var(--teal);">90 sec</div></div></div>
+        <div class="step-row" id="ds2"><div class="step-num" style="background:var(--indigo-lt);color:var(--indigo);">2</div><div><div class="step-title">Learner journey</div><div class="step-desc">Mobile login or embedded view in Salesforce → course opens → completes → completion ticks. One clean end-to-end flow. Let them touch it.</div><div class="step-time" style="color:var(--indigo);">4 min</div></div></div>
+        <div class="step-row" id="ds3"><div class="step-num" style="background:var(--amber-lt);color:#92400E;">3</div><div><div class="step-title">The wow moment</div><div class="step-desc">Show offline access OR completion syncing back to Salesforce in real time. The one thing they did not expect. This is what they remember.</div><div class="step-time" style="color:var(--amber);">2 min</div></div></div>
+        <div class="step-row" id="ds4"><div class="step-num" style="background:var(--green-lt);color:var(--green-dk);">4</div><div><div class="step-title">Their question</div><div class="step-desc">"How would YOUR team use this?" Then stop talking. Their answer is your follow-up email and your next step.</div><div class="step-time" style="color:var(--green);">2 min</div></div></div>
       </div>
     </div>
-    <!-- 5-4: Dos and Don'ts -->
     <div class="slide" id="c5s4" style="background:#F7F9FC;">
       <div style="max-width:600px;width:100%;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div style="background:white;border-radius:12px;padding:1.25rem;border:1px solid var(--green-lt);">
-            <div style="font-size:13px;font-weight:600;color:var(--green-dk);margin-bottom:10px;">✓ Always do this</div>
-            ${["Lead with their use case — not your features","Show ONE complete learner journey end-to-end","Ask about their app type before demoing mobile","Let them interact — pass the keyboard or phone","Learner view first, admin and reporting second","End with: 'How would YOUR team use this?'"].map(t=>`<div style="font-size:11.5px;color:var(--slate);padding:5px 0;border-bottom:1px solid #F0FFF4;line-height:1.4;">${t}</div>`).join('')}
+        <div class="grid2">
+          <div class="do-col">
+            <div class="do-title">✓ Always do this</div>
+            <div class="do-item">Lead with their use case — not your features</div>
+            <div class="do-item">Show ONE complete learner journey end-to-end</div>
+            <div class="do-item">Ask about their app type before demoing mobile</div>
+            <div class="do-item">Let them interact — pass the keyboard or phone</div>
+            <div class="do-item">Learner view first, admin and reporting second</div>
+            <div class="do-item">End with: 'How would YOUR team use this?'</div>
           </div>
-          <div style="background:white;border-radius:12px;padding:1.25rem;border:1px solid var(--red-lt);">
-            <div style="font-size:13px;font-weight:600;color:var(--red-dk);margin-bottom:10px;">✗ Never do this</div>
-            ${["Info-dump iFrame + SSO + APIs + Webhooks in one go","Promise full mobile support before confirming app type","Assume they know what 'embedded' means","Over-engineer integrations live in the demo","Skip the mobile demo — show the phone every time","Leave without a named next step and a date"].map(t=>`<div style="font-size:11.5px;color:var(--slate);padding:5px 0;border-bottom:1px solid #FFF5F5;line-height:1.4;">${t}</div>`).join('')}
+          <div class="dont-col">
+            <div class="dont-title">✗ Never do this</div>
+            <div class="dont-item">Info-dump iFrame + SSO + APIs + Webhooks in one go</div>
+            <div class="dont-item">Promise full mobile support before confirming app type</div>
+            <div class="dont-item">Assume they know what 'embedded' means</div>
+            <div class="dont-item">Over-engineer integrations live in the demo</div>
+            <div class="dont-item">Skip the mobile demo — show the phone every time</div>
+            <div class="dont-item">Leave without a named next step and a date</div>
           </div>
         </div>
       </div>
@@ -758,7 +785,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
   </div>
 </div>
 
-
 <!-- COURSE 6: The Follow-Up -->
 <div class="scene ss" id="scene-c6">
   <div class="ss-hdr">
@@ -766,75 +792,76 @@ body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);
     <div class="ss-dots" id="dots-c6"></div>
   </div>
   <div class="ss-body" id="slides-c6">
-    <!-- 6-1: Framework -->
     <div class="slide active" id="c6s1" style="background:#F7F9FC;">
       <div style="max-width:580px;width:100%;text-align:center;">
         <div style="font-size:48px;margin-bottom:.9rem;">📬</div>
         <div style="font-size:24px;font-weight:600;color:var(--navy);margin-bottom:.75rem;">The Golden 24 Hours</div>
         <div style="font-size:13.5px;color:var(--slate);line-height:1.7;margin-bottom:1.5rem;">Sarah said: <em>"Your mobile demo changed everything — we've never seen training work on the shop floor before."</em><br>You have 24 hours. One email. Make it count.</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;">
-          ${[["Subject","Prove you heard them. Name their exact pain — not 'following up on our call'."],["Opening line","Quote their words back. Not 'thanks for the time.' Use what they said."],["Value","1 sentence. 1 screenshot or short GIF. Their use case — not your feature list."],["Next step","Specific date. Specific action. Not 'let me know if you have questions.'"]].map(([l,v])=>`<div style="background:white;border-radius:9px;padding:1rem;border:1px solid var(--border);"><div style="font-size:9.5px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">${l}</div><div style="font-size:12px;color:var(--slate);line-height:1.5;">${v}</div></div>`).join('')}
+        <div class="grid2" style="text-align:left;">
+          <div class="card" style="padding:1rem;"><div style="font-size:9.5px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Subject</div><div style="font-size:12px;color:var(--slate);">Prove you heard them. Name their exact pain — not 'following up on our call'.</div></div>
+          <div class="card" style="padding:1rem;"><div style="font-size:9.5px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Opening line</div><div style="font-size:12px;color:var(--slate);">Quote their words back. Not 'thanks for the time.' Use what they said.</div></div>
+          <div class="card" style="padding:1rem;"><div style="font-size:9.5px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Value</div><div style="font-size:12px;color:var(--slate);">1 sentence. 1 screenshot. Their use case — not your feature list.</div></div>
+          <div class="card" style="padding:1rem;"><div style="font-size:9.5px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Next step</div><div style="font-size:12px;color:var(--slate);">Specific date. Specific action. Not 'let me know if you have questions.'</div></div>
         </div>
       </div>
     </div>
-    <!-- 6-2: Gmail - Retail -->
     <div class="slide" id="c6s2" style="background:#F0F0F0;">
-      <div class="gmail-wrap" id="gmailWrap">
-        <div class="gmail-hdr"><div class="gmail-logo"><span>G</span><span>m</span><span>a</span><span>i</span><span>l</span></div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-left:auto;">Template 1 of 3 — Retail</div></div>
+      <div class="gmail-wrap">
+        <div class="gmail-hdr">
+          <span class="g-b">G</span><span class="g-r">m</span><span class="g-y">a</span><span class="g-b">i</span><span class="g-g">l</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.5);margin-left:auto;">Retail template</span>
+        </div>
         <div class="gmail-compose">
-          <div class="gc-hdr"><div class="gc-title">New Message — NorthStar Retail</div><div style="font-size:11px;color:#5F6368;">Draft saving...</div></div>
-          <div class="gmail-field"><div class="gf-label">To</div><div class="gf-val">sarah.chen@northstarretail.co.uk</div></div>
-          <div class="gmail-field"><div class="gf-label">Subject</div><div class="gf-val typing" id="gSubj1"></div></div>
-          <div class="gmail-body-txt" id="gBody1"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;"><span style="font-size:14px;font-weight:600;color:#202124;">New Message — NorthStar Retail</span></div>
+          <div class="gmail-field"><span class="gf-label">To</span><span class="gf-val">sarah.chen@northstarretail.co.uk</span></div>
+          <div class="gmail-field"><span class="gf-label">Subject</span><span class="gf-val typing" id="gSubj1"></span></div>
+          <div class="gmail-body" id="gBody1"></div>
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-            <button class="gmail-send" id="gSend1" onclick="sendEmail(1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>Send</button>
-            <div class="sent-conf" id="gConf1"><svg width="14" height="14" viewBox="0 0 24 24" fill="#137333"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><div class="sent-conf-t">Sent to sarah.chen@northstarretail.co.uk</div></div>
+            <button class="gmail-send-btn" id="gSend1" onclick="sendEmail()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>Send
+            </button>
+            <div class="sent-conf" id="gConf1"><svg width="14" height="14" viewBox="0 0 24 24" fill="#137333"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span class="sent-txt">Sent to sarah.chen@northstarretail.co.uk</span></div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 6-3: Gmail - FinServ -->
     <div class="slide" id="c6s3" style="background:#F0F0F0;">
       <div class="gmail-wrap">
-        <div class="gmail-hdr"><div class="gmail-logo"><span>G</span><span>m</span><span>a</span><span>i</span><span>l</span></div><div style="font-size:11px;color:rgba(255,255,255,.5);margin-left:auto;">Template 2 of 3 — Financial Services</div></div>
+        <div class="gmail-hdr">
+          <span class="g-b">G</span><span class="g-r">m</span><span class="g-y">a</span><span class="g-b">i</span><span class="g-g">l</span>
+          <span style="font-size:11px;color:rgba(255,255,255,.5);margin-left:auto;">Financial services template</span>
+        </div>
         <div class="gmail-compose">
-          <div class="gc-hdr"><div class="gc-title">New Message — Clearfield Wealth</div></div>
-          <div class="gmail-field"><div class="gf-label">To</div><div class="gf-val">marcus.obi@clearfieldwealth.co.uk</div></div>
-          <div class="gmail-field"><div class="gf-label">Subject</div><div class="gf-val">[Marcus], FCA compliance training in Salesforce — zero manual tracking</div></div>
-          <div class="gmail-body-txt">Hi Marcus,
+          <div class="gmail-field"><span class="gf-label">To</span><span class="gf-val">marcus.obi@clearfieldwealth.co.uk</span></div>
+          <div class="gmail-field"><span class="gf-label">Subject</span><span class="gf-val">[Marcus] — FCA compliance training in Salesforce: zero manual tracking</span></div>
+          <div class="gmail-body">Dear Marcus,
 
+During our call, you noted that your advisors work exclusively in Salesforce and that compliance tracking is currently managed via spreadsheet.
 
-You mentioned your advisors live in Salesforce and your compliance tracking is still done manually via spreadsheet.
+LearnUpon Anywhere resolves both. Training appears directly within Salesforce — advisors complete it without switching applications. Completion data feeds to your dashboard automatically, with a full FCA audit trail.
 
+No spreadsheets. No manual chasing. 30-day compliance window met automatically.
 
-Anywhere changes both. Training appears inside Salesforce — advisors complete it without switching tabs. Completions feed back to your dashboard automatically with a full FCA audit trail.
+I have attached a screenshot of the embedded experience your advisors would see when opening a client record.
 
+Next step: I would like to confirm your Salesforce instance type to determine the correct embed approach. Would a 20-minute call with your Salesforce administrator work this week?
 
-No spreadsheets. No chasing. 30-day compliance window met automatically.
-
-
-Screenshot attached — this is what your advisors see when they open a client record.
-
-
-Next step: I want to check your Salesforce instance type to confirm the embed approach. Does a 20-minute call with your Salesforce admin work this week?
-
-
-Nikhil</div>
-          <div style="background:#EEF2FF;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11.5px;color:var(--indigo);">✓ Uses their exact pain (manual spreadsheet) · ✓ Names the audit trail · ✓ Specific next step with their team</div>
+Kind regards,
+Nikhil | Solution Engineer, LearnUpon</div>
+          <div style="background:var(--indigo-lt);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:11.5px;color:var(--indigo);">✓ Uses their exact pain · ✓ Names the audit trail · ✓ Specific next step with named person</div>
         </div>
       </div>
     </div>
-    <!-- 6-4: Reply + lesson -->
     <div class="slide" id="c6s4" style="background:#F7F9FC;">
       <div style="max-width:500px;width:100%;text-align:center;">
         <div style="font-size:48px;margin-bottom:.6rem;">⚡</div>
         <div style="font-size:24px;font-weight:600;color:var(--navy);margin-bottom:.9rem;">Sarah replied in 47 minutes</div>
-        <div style="background:white;border-radius:12px;padding:1.4rem;border:1px solid var(--border);text-align:left;margin-bottom:1rem;">
+        <div class="card" style="text-align:left;margin-bottom:1rem;">
           <div style="font-size:11px;color:var(--slate);margin-bottom:7px;">sarah.chen@northstarretail.co.uk · 47 min ago</div>
           <div style="font-size:13.5px;color:#202124;line-height:1.7;">Hi Nikhil, yes — the mobile demo was exactly what I needed to show the board. The fact it works offline changes everything for us. Can we get a technical call in this week to check our SSO setup? Thursday works.</div>
         </div>
         <div style="background:var(--green-lt);border-radius:9px;padding:.9rem;font-size:13px;color:var(--green-dk);font-weight:500;margin-bottom:.75rem;">The email worked because it used her words, showed her use case, and had a specific next step.</div>
-        <div style="font-size:12px;color:var(--slate);line-height:1.6;">The Tech/SaaS and Professional Services templates follow the same structure. Subject = their pain. Opening = their words. Value = one visual. Next step = specific date and action.</div>
+        <div style="font-size:12px;color:var(--slate);line-height:1.6;">Subject = their pain. Opening = their words. Value = one visual. Next step = specific date and action.</div>
       </div>
     </div>
   </div>
@@ -845,7 +872,6 @@ Nikhil</div>
   </div>
 </div>
 
-
 <!-- COURSE 7: Handle the Objection -->
 <div class="scene ss" id="scene-c7">
   <div class="ss-hdr">
@@ -853,23 +879,21 @@ Nikhil</div>
     <div class="ss-dots" id="dots-c7"></div>
   </div>
   <div class="ss-body" id="slides-c7">
-    <!-- 7-1: Phone ringing -->
     <div class="slide active" id="c7s1">
-      <div class="phone-sc" id="phSc1">
+      <div class="phone-sc">
         <div style="font-size:13px;color:rgba(255,255,255,.38);">Thursday 3:47pm · Technical SSO validation call</div>
-        <div class="phone-dev" id="phDev1">
-          <div class="phone-screen"><div class="ph-caller">In call</div><div class="ph-name">Sarah Chen</div><div class="ph-sub">NorthStar Retail</div><div class="ph-status" style="color:rgba(255,255,255,.38);">14 minutes in — going well</div></div>
+        <div class="phone-dev">
+          <div class="ph-screen"><div class="ph-caller">In call</div><div class="ph-name">Sarah Chen</div><div class="ph-sub">NorthStar Retail</div><div style="font-size:11px;color:rgba(255,255,255,.38);margin-top:7px;">14 minutes in — going well</div></div>
           <div class="ph-btns"><button class="ph-btn ph-dec">✕</button><button class="ph-btn ph-acc">✓</button></div>
         </div>
         <div style="font-size:13px;color:rgba(255,255,255,.38);">Then suddenly — IT joins the call...</div>
       </div>
     </div>
-    <!-- 7-2: Objection + ACE -->
     <div class="slide" id="c7s2">
-      <div class="phone-sc ring" id="phSc2" style="gap:1.1rem;">
+      <div class="phone-sc ring">
         <div style="font-size:12px;color:rgba(255,255,255,.45);">🚨 Objection incoming</div>
-        <div class="phone-dev ring" id="phDev2">
-          <div class="phone-screen" style="background:#450A0A;">
+        <div class="phone-dev ring">
+          <div class="ph-screen" style="background:#450A0A;">
             <div class="ph-caller" style="color:rgba(255,100,100,.55);">IT Manager — NorthStar</div>
             <div class="ph-name" style="color:#FCA5A5;font-size:13px;">"Our IT policy blocks iFrame embedding on all external domains. This won't work."</div>
           </div>
@@ -880,19 +904,20 @@ Nikhil</div>
           <div class="obj-txt">"iFrame embedding is blocked by our IT policy."</div>
           <div class="ace-step" id="ace1"><div class="ace-letter" style="background:var(--teal-lt);color:var(--teal-dk);">A</div><div class="ace-text"><strong>Acknowledge:</strong> "That's a really common first response from IT — and it makes sense they're cautious."</div></div>
           <div class="ace-step" id="ace2"><div class="ace-letter" style="background:var(--indigo-lt);color:var(--indigo);">C</div><div class="ace-text"><strong>Contextualise:</strong> "Usually it's a default CSP header setting, not a hard block. We've resolved this in 3 calls with similar retail IT teams."</div></div>
-          <div class="ace-step" id="ace3"><div class="ace-letter" style="background:var(--green-lt);color:var(--green-dk);">E</div><div class="ace-text"><strong>Evidence &amp; Escalate:</strong> "We also support SQSSO deep links and SCORM API as alternatives. 20-minute call with your IT team this week — I'll have an answer by Friday."</div></div>
+          <div class="ace-step" id="ace3"><div class="ace-letter" style="background:var(--green-lt);color:var(--green-dk);">E</div><div class="ace-text"><strong>Evidence &amp; Escalate:</strong> "We also support SQSSO deep links as an alternative. 20-minute call with your IT team this week — I'll have an answer by Friday."</div></div>
         </div>
       </div>
     </div>
-    <!-- 7-3: Resolved -->
     <div class="slide" id="c7s3">
-      <div class="phone-sc resolved" id="phSc3">
+      <div class="phone-sc ok">
         <div style="font-size:48px;margin-bottom:.5rem;">✅</div>
-        <div style="font-size:24px;font-weight:600;color:var(--white);margin-bottom:.4rem;">Objection handled</div>
+        <div style="font-size:24px;font-weight:600;margin-bottom:.4rem;">Objection handled</div>
         <div style="font-size:13px;color:rgba(255,255,255,.45);max-width:380px;text-align:center;line-height:1.7;margin-bottom:1.25rem;">IT confirmed the CSP header was a default setting — not a hard block. SQSSO approach agreed. Technical validation: 1 week. Deal progressing.</div>
         <div style="background:rgba(255,255,255,.06);border-radius:12px;padding:1.1rem 1.4rem;max-width:380px;width:100%;">
           <div style="font-size:10.5px;color:rgba(255,255,255,.35);margin-bottom:9px;text-transform:uppercase;letter-spacing:.06em;">ACE in action</div>
-          ${[["Acknowledge","Never argue. Validate first. Drops defensiveness before you solve."],["Contextualise","Reframe the real concern — effort and settings, not impossibility."],["Evidence","Close with proof or a named next step. Never leave it hanging."]].map(([l,v])=>`<div style="display:flex;gap:10px;margin-bottom:8px;"><div style="font-size:11.5px;font-weight:600;color:var(--teal);min-width:80px;">${l}</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.5;">${v}</div></div>`).join('')}
+          <div style="display:flex;gap:10px;margin-bottom:8px;"><div style="font-size:11.5px;font-weight:600;color:var(--teal);min-width:80px;">Acknowledge</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.5;">Never argue. Validate first. Drops defensiveness before you solve.</div></div>
+          <div style="display:flex;gap:10px;margin-bottom:8px;"><div style="font-size:11.5px;font-weight:600;color:var(--teal);min-width:80px;">Contextualise</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.5;">Reframe the real concern — effort and settings, not impossibility.</div></div>
+          <div style="display:flex;gap:10px;"><div style="font-size:11.5px;font-weight:600;color:var(--teal);min-width:80px;">Evidence</div><div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.5;">Close with proof or a named next step. Never leave it hanging.</div></div>
         </div>
       </div>
     </div>
@@ -904,17 +929,16 @@ Nikhil</div>
   </div>
 </div>
 
-
 <!-- COURSE 8: Deal Closed -->
 <div class="scene" id="scene-c8">
-  <div class="close-sc" id="closeSc">
+  <div class="close-sc">
     <div id="confC"></div>
     <div class="deal-won" id="dealWon">
       <div class="dw-icon">🏆</div>
       <div class="dw-title">Deal Closed. Won.</div>
       <div class="dw-sub">NorthStar Retail · LearnUpon Anywhere · Enterprise</div>
     </div>
-    <div class="team-photos" id="teamPh">
+    <div class="team-row" id="teamRow">
       <div class="tm" id="tm1"><div class="tm-av">D</div><div class="tm-name">Director</div><div class="tm-role">Add your photo</div></div>
       <div class="tm" id="tm2"><div class="tm-av ceo">👑</div><div class="tm-name">CEO</div><div class="tm-role">Add your photo</div></div>
       <div class="tm" id="tm3"><div class="tm-av">N</div><div class="tm-name">Nikhil</div><div class="tm-role">SE — Deal owner</div></div>
@@ -928,152 +952,147 @@ Nikhil</div>
   </div>
 </div>
 
-
 </div><!-- main-c -->
 </div><!-- p-body -->
 </div><!-- portal -->
 
-
 <script>
-// ── AUDIO ──────────────────────────────────────────────────────────────────
-let actx = null;
-function getAC(){if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();return actx;}
-function playPing(){try{const c=getAC(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.setValueAtTime(880,c.currentTime);o.frequency.exponentialRampToValueAtTime(660,c.currentTime+.1);g.gain.setValueAtTime(.3,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.5);o.start();o.stop(c.currentTime+.5);}catch(e){}}
-function playChime(){try{const c=getAC();[523,659,784].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=f;g.gain.setValueAtTime(.18,c.currentTime+i*.12);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+i*.12+.3);o.start(c.currentTime+i*.12);o.stop(c.currentTime+i*.12+.3);});}catch(e){}}
-function playRing(){try{const c=getAC();[0,.45].forEach(t=>{const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.setValueAtTime(440,c.currentTime+t);o.frequency.setValueAtTime(480,c.currentTime+t+.1);o.frequency.setValueAtTime(440,c.currentTime+t+.2);g.gain.setValueAtTime(.12,c.currentTime+t);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+t+.38);o.start(c.currentTime+t);o.stop(c.currentTime+t+.38);});}catch(e){}}
-function playWhoosh(){try{const c=getAC(),b=c.createOscillator(),g=c.createGain();b.connect(g);g.connect(c.destination);b.type='sawtooth';b.frequency.setValueAtTime(200,c.currentTime);b.frequency.exponentialRampToValueAtTime(50,c.currentTime+.4);g.gain.setValueAtTime(.2,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.4);b.start();b.stop(c.currentTime+.4);}catch(e){}}
-function playFanfare(){try{const c=getAC();[523,659,784,1047].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=f;g.gain.setValueAtTime(.22,c.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+i*.1+.35);o.start(c.currentTime+i*.1);o.stop(c.currentTime+i*.1+.35);});}catch(e){}}
-function playTension(){try{const c=getAC(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sawtooth';o.frequency.setValueAtTime(110,c.currentTime);o.frequency.setValueAtTime(100,c.currentTime+.2);g.gain.setValueAtTime(.15,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.5);o.start();o.stop(c.currentTime+.5);}catch(e){}}
+// Audio
+let actx=null;
+function ac(){if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();return actx;}
+function ping(){try{const c=ac(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.setValueAtTime(880,c.currentTime);o.frequency.exponentialRampToValueAtTime(660,c.currentTime+.1);g.gain.setValueAtTime(.3,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.5);o.start();o.stop(c.currentTime+.5);}catch(e){}}
+function chime(){try{const c=ac();[523,659,784].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=f;g.gain.setValueAtTime(.18,c.currentTime+i*.12);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+i*.12+.3);o.start(c.currentTime+i*.12);o.stop(c.currentTime+i*.12+.3);});}catch(e){}}
+function ringSound(){try{const c=ac();[0,.45].forEach(t=>{const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='square';o.frequency.setValueAtTime(440,c.currentTime+t);o.frequency.setValueAtTime(480,c.currentTime+t+.1);o.frequency.setValueAtTime(440,c.currentTime+t+.2);g.gain.setValueAtTime(.12,c.currentTime+t);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+t+.38);o.start(c.currentTime+t);o.stop(c.currentTime+t+.38);});}catch(e){}}
+function whoosh(){try{const c=ac(),b=c.createOscillator(),g=c.createGain();b.connect(g);g.connect(c.destination);b.type='sawtooth';b.frequency.setValueAtTime(200,c.currentTime);b.frequency.exponentialRampToValueAtTime(50,c.currentTime+.4);g.gain.setValueAtTime(.2,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.4);b.start();b.stop(c.currentTime+.4);}catch(e){}}
+function fanfare(){try{const c=ac();[523,659,784,1047].forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=f;g.gain.setValueAtTime(.22,c.currentTime+i*.1);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+i*.1+.35);o.start(c.currentTime+i*.1);o.stop(c.currentTime+i*.1+.35);});}catch(e){}}
+function flash(col){const el=document.getElementById('sFlash');el.style.background=col==='red'?'rgba(239,68,68,.18)':col==='green'?'rgba(34,197,94,.18)':'rgba(245,158,11,.14)';el.style.opacity='1';setTimeout(()=>el.style.opacity='0',300);}
 
-
-function flash(col){const el=document.getElementById('sFlash');el.className='s-flash '+col;el.style.opacity='1';setTimeout(()=>el.style.opacity='0',300);}
-
-
-// ── STATE ──────────────────────────────────────────────────────────────────
+// State
 let curC=0,curS=0;
 const done={};
 const counts={1:3,2:4,3:3,4:3,5:4,6:4,7:3};
 
-
 function goHome(){
-  setScene('home');
+  document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
+  document.getElementById('scene-home').classList.add('active');
   document.querySelectorAll('.ci').forEach(e=>e.classList.remove('active'));
   document.getElementById('nav-home').classList.add('active');
   curC=0;
 }
-function setScene(id){
-  document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
-  document.getElementById('scene-'+id).classList.add('active');
-}
+
 function openCourse(n){
   curC=n;curS=0;
+  document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.ci').forEach(e=>e.classList.remove('active'));
   document.getElementById('nav-c'+n).classList.add('active');
-  if(n===8){setScene('c8');triggerClose();return;}
-  setScene('c'+n);
-  showSlide(n,0);buildDots(n);updateCounter(n);
-  onEnter(n,0);
+  if(n===8){document.getElementById('scene-c8').classList.add('active');triggerClose();return;}
+  document.getElementById('scene-c'+n).classList.add('active');
+  showSlide(n,0);buildDots(n);updateCounter(n);onEnter(n,0);
 }
+
 function buildDots(n){
-  const cnt=counts[n];
-  const el=document.getElementById('dots-c'+n);
+  const cnt=counts[n],el=document.getElementById('dots-c'+n);
   if(!el)return;
-  el.innerHTML=Array.from({length:cnt},(_,i)=>`<div class="sd${i===0?' active':''}" onclick="jumpSlide(${i})"></div>`).join('');
+  let h='';
+  for(let i=0;i<cnt;i++) h+=`<div class="sd${i===0?' active':''}" onclick="jumpSlide(${i})"></div>`;
+  el.innerHTML=h;
 }
+
 function updateDots(n,idx){
-  document.querySelectorAll(`#dots-c${n} .sd`).forEach((d,i)=>{d.classList.remove('active','done');if(i<idx)d.classList.add('done');else if(i===idx)d.classList.add('active');});
+  const dots=document.querySelectorAll('#dots-c'+n+' .sd');
+  dots.forEach((d,i)=>{d.className='sd';if(i<idx)d.classList.add('done');else if(i===idx)d.classList.add('active');});
 }
-function updateCounter(n){const el=document.getElementById('counter-c'+n);if(el)el.textContent=(curS+1)+' / '+counts[n];}
+
+function updateCounter(n){
+  const el=document.getElementById('counter-c'+n);
+  if(el)el.textContent=(curS+1)+' / '+counts[n];
+}
+
 function showSlide(n,idx){
-  const all=document.querySelectorAll(`#slides-c${n} .slide`);
+  const all=document.querySelectorAll('#slides-c'+n+' .slide');
   all.forEach(s=>{s.classList.remove('active');s.style.display='none';});
   if(all[idx]){all[idx].style.display='flex';setTimeout(()=>all[idx].classList.add('active'),10);}
 }
+
 function jumpSlide(idx){showSlide(curC,idx);curS=idx;updateDots(curC,idx);updateCounter(curC);onEnter(curC,idx);}
+
 function nextSlide(){
   const n=curC,total=counts[n];
   if(curS<total-1){curS++;showSlide(n,curS);updateDots(n,curS);updateCounter(n);onEnter(n,curS);}
-  else{completeCourse(n);openCourse(n+1<=8?n+1:1);}
+  else{completeCourse(n);openCourse(n<8?n+1:1);}
   const btn=document.getElementById('nextbtn-c'+n);
-  if(btn&&curS===counts[n]-1){btn.textContent='Complete & Continue →';btn.style.background='#22C55E';btn.style.borderColor='#22C55E';btn.style.color='white';}
+  if(btn&&curS===counts[n]-1){btn.textContent='Complete & Continue →';btn.style.background='#22C55E';btn.style.color='#0F172A';}
 }
+
 function prevSlide(){
-  if(curS>0){curS--;showSlide(curC,curS);updateDots(curC,curS);updateCounter(curC);onEnter(curC,curS);const btn=document.getElementById('nextbtn-c'+curC);if(btn){btn.textContent='Next →';btn.style.background='';btn.style.borderColor='';btn.style.color='';btn.className='btn-n primary';}}
-  else goHome();
+  if(curS>0){
+    curS--;showSlide(curC,curS);updateDots(curC,curS);updateCounter(curC);onEnter(curC,curS);
+    const btn=document.getElementById('nextbtn-c'+curC);
+    if(btn){btn.textContent='Next →';btn.style.background='';btn.style.color='';}
+  }else goHome();
 }
+
 function completeCourse(n){
   done[n]=true;
   const tk=document.getElementById('tick-c'+n);
-  if(tk){tk.classList.add('done');tk.querySelector('svg').setAttribute('stroke','white');}
-  updateProgress();playFanfare();flash('green');
-}
-function updateProgress(){
+  if(tk){tk.classList.add('done');tk.textContent='✓';}
   const p=Math.round(Object.keys(done).length/8*100);
   document.getElementById('progFill').style.width=p+'%';
   document.getElementById('progPct').textContent=p+'%';
+  fanfare();flash('green');
 }
 
-
-// ── SLIDE ENTER HOOKS ──────────────────────────────────────────────────────
 function onEnter(n,idx){
-  if(n===1&&idx===1){playPing();setTimeout(()=>{const p=document.getElementById('notifPop');if(p)p.classList.add('show');},400);}
+  if(n===1&&idx===1){ping();setTimeout(()=>{const p=document.getElementById('notifPop');if(p)p.classList.add('show');},400);}
   if(n===4&&idx===0){setTimeout(()=>{document.querySelectorAll('.impact-card').forEach((c,i)=>setTimeout(()=>c.classList.add('show'),i*120));},200);}
-  if(n===5&&idx===0){playChime();}
+  if(n===5&&idx===0){chime();}
   if(n===5&&idx===1){setTimeout(()=>{const e=document.getElementById('luEmbed');if(e)e.classList.add('show');},800);}
   if(n===5&&idx===2){['ds1','ds2','ds3','ds4'].forEach((id,i)=>setTimeout(()=>{const e=document.getElementById(id);if(e)e.classList.add('vis');},i*280+100));}
-  if(n===6&&idx===1){typeGmail();}
-  if(n===7&&idx===1){playRing();flash('red');setTimeout(()=>{const c=document.getElementById('objCard');if(c)c.classList.add('show');},500);setTimeout(()=>{['ace1','ace2','ace3'].forEach((id,i)=>setTimeout(()=>{const e=document.getElementById(id);if(e)e.classList.add('show');},i*380));},900);}
+  if(n===6&&idx===1){typeEmail();}
+  if(n===7&&idx===1){ringSound();flash('red');setTimeout(()=>{const c=document.getElementById('objCard');if(c)c.classList.add('show');},500);setTimeout(()=>{['ace1','ace2','ace3'].forEach((id,i)=>setTimeout(()=>{const e=document.getElementById(id);if(e)e.classList.add('show');},i*380));},900);}
 }
 
-
-// ── GMAIL TYPING ──────────────────────────────────────────────────────────
-function typeGmail(){
-  const subjEl=document.getElementById('gSubj1');
-  const bodyEl=document.getElementById('gBody1');
-  if(!subjEl)return;
-  const subj='[Sarah], mobile training for your store managers — exactly like you described';
-  const body=`Hi Sarah,
-
-
-In our call, you mentioned your store managers are on the shop floor all day — getting to a desktop for training simply doesn't happen.
-
-
-That's exactly where Anywhere solves it. Training appears on their phone — SSO login in one tap, works offline, completion feeds back to your dashboard in real time.
-
-
-Your seasonal hires can be compliant before their first shift.
-
-
-I've recorded a 90-second walkthrough showing the exact flow your team would use: [link]
-
-
-Next step: I'll confirm your mobile SSO setup and have an answer to you by Thursday.
-
-
-Nikhil`;
+// Email typing
+function typeEmail(){
+  const se=document.getElementById('gSubj1');
+  const be=document.getElementById('gBody1');
+  if(!se)return;
+  const subj='[Sarah] — mobile training for your store managers: confirming next steps';
+  const body='Dear Sarah,\n\nIn our call today, you noted that your store managers are on the shop floor all day and that getting to a desktop for training simply does not happen.\n\nLearnUpon Anywhere is designed specifically for this scenario. Training appears on their phone — SSO login in one tap, works offline, and completion feeds back to your dashboard in real time.\n\nYour seasonal hires can be compliant before their first shift.\n\nI have recorded a brief walkthrough of the exact flow your team would use: [link]\n\nNext step: I will confirm your mobile SSO setup and revert to you by Thursday.\n\nKind regards,\nNikhil | Solution Engineer, LearnUpon';
   let i=0;
-  function typeS(){if(i<=subj.length){subjEl.textContent=subj.slice(0,i);i++;setTimeout(typeS,24);}else typeB();}
+  function ts(){if(i<=subj.length){se.textContent=subj.slice(0,i);i++;setTimeout(ts,22);}else tb();}
   let bi=0;
-  function typeB(){if(bi<=body.length){bodyEl.textContent=body.slice(0,bi);bi++;setTimeout(typeB,10);}}
-  setTimeout(typeS,300);
+  function tb(){if(bi<=body.length){be.textContent=body.slice(0,bi);bi++;setTimeout(tb,8);}}
+  setTimeout(ts,300);
 }
-function sendEmail(n){
-  const btn=document.getElementById('gSend'+n);
-  const conf=document.getElementById('gConf'+n);
+
+function sendEmail(){
+  const btn=document.getElementById('gSend1');
+  const conf=document.getElementById('gConf1');
   if(btn)btn.disabled=true;
-  playWhoosh();flash('green');
+  whoosh();flash('green');
   if(conf)conf.classList.add('show');
 }
 
-
-// ── CLOSE CELEBRATION ──────────────────────────────────────────────────────
+// Close celebration
 function triggerClose(){
-  playFanfare();
-  const colors=['#00A9A5','#22C55E','#F59E0B','#4F46E5','#EF4444','#FFFFFF','#1B2B4B'];
+  fanfare();
+  const colors=['#00A9A5','#22C55E','#F59E0B','#4F46E5','#EF4444','#FFFFFF'];
   const cont=document.getElementById('confC');
-  if(cont){cont.innerHTML='';for(let i=0;i<70;i++){const el=document.createElement('div');el.className='confetti-p';el.style.cssText=`left:${Math.random()*100}%;top:0;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${2+Math.random()*2.5}s;animation-delay:${Math.random()*1.5}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'};transform:rotate(${Math.random()*360}deg);`;cont.appendChild(el);}}
-  setTimeout(()=>{const dw=document.getElementById('dealWon');if(dw)dw.classList.add('show');},200);
-  setTimeout(()=>{const tp=document.getElementById('teamPh');if(tp)tp.classList.add('show');['tm1','tm2','tm3'].forEach((id,i)=>setTimeout(()=>{const e=document.getElementById(id);if(e)e.classList.add('show');},i*180));},700);
+  if(cont){
+    cont.innerHTML='';
+    for(let i=0;i<70;i++){
+      const el=document.createElement('div');
+      el.className='confetti-p';
+      el.style.cssText='left:'+Math.random()*100+'%;top:0;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-duration:'+(2+Math.random()*2.5)+'s;animation-delay:'+Math.random()*1.5+'s;width:'+(6+Math.random()*8)+'px;height:'+(6+Math.random()*8)+'px;border-radius:'+(Math.random()>.5?'50%':'2px')+';';
+      cont.appendChild(el);
+    }
+  }
+  setTimeout(()=>{const d=document.getElementById('dealWon');if(d)d.classList.add('show');},200);
+  setTimeout(()=>{
+    const t=document.getElementById('teamRow');if(t)t.classList.add('show');
+    ['tm1','tm2','tm3'].forEach((id,i)=>setTimeout(()=>{const e=document.getElementById(id);if(e)e.classList.add('show');},i*180));
+  },700);
   setTimeout(()=>{const ds=document.getElementById('dealStats');if(ds)ds.classList.add('show');completeCourse(8);},1300);
 }
 </script>
